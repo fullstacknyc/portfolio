@@ -2,67 +2,116 @@
 :root {
     --background-color: #ffffff; /* White background for light mode */
     --text-color: #000000; /* Black text for light mode */
-  }
-  
-  /* Define color scheme for dark mode */
-  .dark-mode {
+    --accent-color: #007BFF; /* Blue accent color for interactive elements */
+}
+
+/* Define color scheme for dark mode */
+.dark-mode {
     --background-color: #1e1e1e; /* Dark grey background for dark mode */
     --text-color: #ffffff; /* White text for dark mode */
-  }
-  
-  /* Apply color scheme to body */
-  body {
+    --accent-color: #4da6ff; /* Lighter blue accent for dark mode */
+}
+
+/* Apply color scheme to body */
+body {
     background-color: var(--background-color); /* Use the background color variable */
     color: var(--text-color); /* Use the text color variable */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
-  }
-  
-  /* Header styles */
-  header {
+    font-family: Arial, sans-serif; /* Set a default font family */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+/* Header styles */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background-color: var(--background-color); /* Use background color variable */
-  }
-  
-  /* Navigation links container */
-  .links ul {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow to header */
+}
+
+/* Navigation links container */
+.links ul {
     display: flex;
     list-style-type: none;
     padding: 0;
-  }
-  
-  /* Individual navigation items */
-  .links li {
+    margin: 0; /* Remove default margin */
+}
+
+/* Individual navigation items */
+.links li {
     margin-right: 1rem;
-  }
-  
-  /* Navigation link styles */
-  .links a {
+}
+
+/* Navigation link styles */
+.links a {
     text-decoration: none;
     color: var(--text-color); /* Use text color variable */
-  }
-  
-  /* Title styles */
-  .title p {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for navigation links */
+.links a:hover {
+    color: var(--accent-color); /* Change color on hover */
+}
+
+/* Title styles */
+.title {
+    text-align: center; /* Center align the title */
+    padding: 20px 0; /* Add padding above and below */
+}
+
+.title p {
+    font-size: 2.5rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
     color: var(--text-color); /* Use text color variable */
-  }
-  
-  /* Dark mode button styles */
-  #darkModeButton {
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for title */
+.title p:hover {
+    color: var(--accent-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Dark mode button styles */
+#darkModeButton {
     padding: 0.5rem 1rem;
     background-color: var(--text-color); /* Use text color for button background */
     color: var(--background-color); /* Use background color for button text */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  /* Hover effect for dark mode button */
-  #darkModeButton:hover {
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for dark mode button */
+#darkModeButton:hover {
     opacity: 0.8;
-  }
-  
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically on small screens */
+    }
+
+    .links ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center; /* Center align the stacked links */
+    }
+
+    .links li {
+        margin: 0.5rem 0; /* Add vertical margin between stacked links */
+    }
+
+    .title p {
+        font-size: 2rem; /* Reduce font size on smaller screens */
+    }
+}
