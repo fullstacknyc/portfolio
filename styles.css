@@ -1,5 +1,68 @@
-body {
-    margin: 0;
+/* Define default color scheme for light mode */
+:root {
+    --background-color: #ffffff; /* White background for light mode */
+    --text-color: #000000; /* Black text for light mode */
+  }
+  
+  /* Define color scheme for dark mode */
+  .dark-mode {
+    --background-color: #1e1e1e; /* Dark grey background for dark mode */
+    --text-color: #ffffff; /* White text for dark mode */
+  }
+  
+  /* Apply color scheme to body */
+  body {
+    background-color: var(--background-color); /* Use the background color variable */
+    color: var(--text-color); /* Use the text color variable */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color); /* Use background color variable */
+  }
+  
+  /* Navigation links container */
+  .links ul {
+    display: flex;
+    list-style-type: none;
     padding: 0;
-    font-family: sans-serif;
-}
+  }
+  
+  /* Individual navigation items */
+  .links li {
+    margin-right: 1rem;
+  }
+  
+  /* Navigation link styles */
+  .links a {
+    text-decoration: none;
+    color: var(--text-color); /* Use text color variable */
+  }
+  
+  /* Title styles */
+  .title p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color); /* Use text color variable */
+  }
+  
+  /* Dark mode button styles */
+  #darkModeButton {
+    padding: 0.5rem 1rem;
+    background-color: var(--text-color); /* Use text color for button background */
+    color: var(--background-color); /* Use background color for button text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for dark mode button */
+  #darkModeButton:hover {
+    opacity: 0.8;
+  }
+  
