@@ -1,0 +1,63 @@
+Front-End Development Skills
+HTML: Structuring web pages
+
+CSS: Styling and layout
+
+JavaScript: Client-side interactivity
+
+Client-Side Interactivity: User action responses
+
+API Integration: Fetching and displaying data
+
+Additional Skills (if applicable)
+Version Control: Git
+
+Responsive Design: Cross-device layouts
+
+Front-End Frameworks: React, Vue, Angular (if applicable)
+
+Basic Debugging: Troubleshooting in browser
+
+Basic Accessibility Principles: Inclusive web practices
+
+This format should make it easy to save and reference!
+Skills to Learn
+Back-End Development
+
+Node.js, Python, Ruby, PHP
+
+Databases
+
+SQL (MySQL, PostgreSQL), NoSQL (MongoDB)
+
+Server Management
+
+Linux basics, Web servers (Apache, Nginx)
+
+DevOps
+
+Docker, CI/CD pipelines
+
+Cloud Services
+
+AWS, Google Cloud, Azure
+
+Web Security
+
+HTTPS/SSL, Authentication & Authorization, Vulnerability testing
+
+Performance Optimization
+
+Server-side rendering, Caching strategies
+
+Advanced JavaScript
+
+Design patterns, Functional programming
+
+Testing
+
+Unit testing, Integration testing
+
+Web Architecture
+
+Microservices, Serverless architecture
