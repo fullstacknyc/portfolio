@@ -7,12 +7,12 @@ class HeaderComponent extends HTMLElement {
             <header>
                 <div class="links">
                     <ul>
-                        <li><a href="#Home">Home</a></li>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Skills">Skills</a></li>
-                        <li><a href="#Projects">Projects</a></li>
-                        <li><a href="#Resume">Resume</a></li>
-                        <li><a href="#Contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="src/about.html">About</a></li>
+                        <li><a href="src/skills.html">Skills</a></li>
+                        <li><a href="src/projects.html">Projects</a></li>
+                        <li><a href="src/resume.html">Resume</a></li>
+                        <li><a href="src/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="title">
@@ -49,7 +49,9 @@ class FooterComponent extends HTMLElement {
                         <ul>
                             <li><a href="#Home">Home</a></li>
                             <li><a href="#About">About</a></li>
+                            <li><a href="#Skills">Skills</a></li>
                             <li><a href="#Projects">Projects</a></li>
+                            <li><a href="#Resume">Resume</a></li>
                             <li><a href="#Contact">Contact</a></li>
                         </ul>
                     </div>
