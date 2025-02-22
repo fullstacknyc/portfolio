@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Camilo (fullstacknyc)</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Projects - Camilo's Portfolio</title>
+    <link href="/styles.css" rel="stylesheet">
 </head>
+
 <body>
     <header-component></header-component>
 
     <main class="main-content">
+        <h1>Projects</h1>
         <br>
-        <h1>Welcome to my page!</h1>
-        <br>
-        <p>Hi, I'm Camilo, a full-stack developer based in NYC. I specialize in building web applications using modern technologies.</p>
-        <p>Feel free to explore my projects and get in touch if you have any questions or opportunities.</p>
-        <p>Check out my <a href="https://github.com/fullstacknyc" target="_blank">Github</a></p>
-        <p id="time">Current time in seconds: </p>
+        <ul>
+            <li>
+                <a href="https://jswrld.vercel.app/">javaScript Page</a>
+            </li>
+            <li>
+                <a href="https://jccamilo-portfolio.vercel.app/">Next.js portfolio</a>
+            </li>
+            <li>
+                <a href="https://prodkz.vercel.app/">Prodkz</a>
+            </li>
+            <li>
+                <a href="https://linktr.ee/camilo1712">Linktree</a>
+            </li>
+        </ul>
+        <p id="time">Current time: </p>
         <script>
-            // Automatically display the current time in seconds using the user's local timezone and update every 1000 milliseconds
+            // Automatically display the current time (hours, minutes, and seconds) using the user's local timezone and update every 1000 milliseconds
             function updateTime() {
                 const now = new Date(); // Create a new Date object
-                const seconds = now.getSeconds();
-                document.getElementById('time').textContent = `Current time in seconds: ${seconds}`;
+                const hours = now.getHours().toString().padStart(2, '0'); // Get hours and pad with leading zero if needed
+                const minutes = now.getMinutes().toString().padStart(2, '0'); // Get minutes and pad with leading zero if needed
+                const seconds = now.getSeconds().toString().padStart(2, '0'); // Get seconds and pad with leading zero if needed
+                document.getElementById('time').textContent = `Current time: ${hours}:${minutes}:${seconds}`;
             }
             setInterval(updateTime, 1000);
             updateTime(); // Call the function once to initialize the time immediately
@@ -32,4 +46,5 @@
     <footer-component></footer-component>
     <script src="/components/components.js" defer></script>
 </body>
+
 </html>
