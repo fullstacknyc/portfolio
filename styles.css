@@ -182,6 +182,8 @@ footer {
 .main-content {
     margin:0 auto;
     text-align: center;
+}
+.main-content ul li a {
     list-style-type: none;
     text-decoration: none;
 }
