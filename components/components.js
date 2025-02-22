@@ -1,8 +1,6 @@
 // Header Component
 class HeaderComponent extends HTMLElement {
-    // This method is called when the element is added to the DOM
     connectedCallback() {
-        // Set the inner HTML of the component
         this.innerHTML = `
             <header>
                 <div class="links">
@@ -24,9 +22,7 @@ class HeaderComponent extends HTMLElement {
             </header>
         `;
 
-        // Add event listener to the dark mode button
         this.querySelector('#darkModeButton').addEventListener('click', () => {
-            // Toggle the 'dark-mode' class on the body element
             document.body.classList.toggle('dark-mode');
         });
     }
@@ -34,9 +30,7 @@ class HeaderComponent extends HTMLElement {
 
 // Footer Component
 class FooterComponent extends HTMLElement {
-    // This method is called when the element is added to the DOM
     connectedCallback() {
-        // Set the inner HTML of the component
         this.innerHTML = `
             <footer>
                 <div class="footer-content">
