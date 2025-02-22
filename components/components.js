@@ -19,11 +19,17 @@ class HeaderComponent extends HTMLElement {
                 <div class="darkMode">
                     <button id="darkModeButton">Dark Mode</button>
                 </div>
+                <button id="navToggleButton" class="nav-toggle-button">☰</button>
             </header>
         `;
 
         this.querySelector('#darkModeButton').addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
+        });
+
+        this.querySelector('#navToggleButton').addEventListener('click', () => {
+            const links = this.querySelector('.links ul');
+            links.classList.toggle('show');
         });
     }
 }
