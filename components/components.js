@@ -56,9 +56,9 @@ class FooterComponent extends HTMLElement {
                     <div class="footer-section">
                         <h3>Connect</h3>
                         <ul>
-                            <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-                            <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://twitter.com/yourusername" target="_blank">Twitter</a></li>
+                            <li><a href="https://github.com/fullstacknyc" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/camilogomezvalencia" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/hawtiiccee" target="_blank">Twitter</a></li>
                         </ul>
                     </div>
                 </div>
