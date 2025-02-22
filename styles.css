@@ -179,13 +179,29 @@ footer {
         margin: 1rem 0;
     }
 }
+
 .main-content {
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
+    padding: 20px; /* Add padding for spacing */
+    max-width: 800px; /* Set a maximum width for the content */
 }
+
 .main-content ul {
     list-style-type: none;
+    padding: 0; /* Remove default padding */
 }
-.main-content ul li a{
+
+.main-content ul li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+}
+
+.main-content ul li a {
     text-decoration: none;
+    color: var(--text-color); /* Ensure links use the text color variable */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.main-content ul li a:hover {
+    color: var(--accent-color); /* Change color on hover */
 }
