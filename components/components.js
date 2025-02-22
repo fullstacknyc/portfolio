@@ -5,7 +5,7 @@ class HeaderComponent extends HTMLElement {
             <header>
                 <div class="links">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/index.html">Home</a></li>
                         <li><a href="/src/about.html">About</a></li>
                         <li><a href="/src/skills.html">Skills</a></li>
                         <li><a href="/src/projects.html">Projects</a></li>
