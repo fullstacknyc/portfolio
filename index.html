@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Camilo (fullstacknyc)</title>
+    <title>Home - Camilo (fullstacknyc)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +13,18 @@
         <br>
         <h1>Welcome to my page!</h1>
         <br>
-        <p>Feel free to look around.</p>
+        <p>Hi, I'm Camilo, a full-stack developer based in NYC. I specialize in building web applications using modern technologies.</p>
+        <p>Feel free to explore my projects and get in touch if you have any questions or opportunities.</p>
+        <p>Check out my <a href="https://github.com/fullstacknyc" target="_blank">Github</a></p>
+        <script>
+            // Display the current date and time the project was last updated
+            const lastUpdated = new Date('2023-10-01T12:00:00Z'); // Replace with the actual last updated date
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const formattedDate = lastUpdated.toLocaleDateString('en-US', options);
+            document.write(`Last updated: ${formattedDate}`);
+            // Display the current date and time
+            const currentDate = new Date();
+        </script>
     </main>
 
     <footer-component></footer-component>
