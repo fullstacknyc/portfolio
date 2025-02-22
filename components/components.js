@@ -14,7 +14,7 @@ class HeaderComponent extends HTMLElement {
                     </ul>
                 </div>
                 <div class="title">
-                    <p>camilo.jgv</p>
+                    <p>fullstacknyc</p>
                 </div>
                 <div class="darkMode">
                     <button id="darkModeButton">Dark Mode</button>
