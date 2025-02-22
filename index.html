@@ -16,14 +16,16 @@
         <p>Hi, I'm Camilo, a full-stack developer based in NYC. I specialize in building web applications using modern technologies.</p>
         <p>Feel free to explore my projects and get in touch if you have any questions or opportunities.</p>
         <p>Check out my <a href="https://github.com/fullstacknyc" target="_blank">Github</a></p>
+        <p id="time">Current time in seconds: </p>
         <script>
-            // Display the current date and time the project was last updated
-            const lastUpdated = new Date('2023-10-01T12:00:00Z'); // Replace with the actual last updated date
-            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-            const formattedDate = lastUpdated.toLocaleDateString('en-US', options);
-            document.write(`Last updated: ${formattedDate}`);
-            // Display the current date and time
-            const currentDate = new Date();
+            // Automatically display the current time in seconds using the user's local timezone and update every 1000 milliseconds
+            function updateTime() {
+                const now = new Date(); // Create a new Date object
+                const seconds = now.getSeconds();
+                document.getElementById('time').textContent = `Current time in seconds: ${seconds}`;
+            }
+            setInterval(updateTime, 1000);
+            updateTime(); // Call the function once to initialize the time immediately
         </script>
     </main>
 
