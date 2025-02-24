@@ -1,130 +1,155 @@
 /* Define default color scheme for light mode */
 :root {
-    --background-color: #ffffff; /* White background for light mode */
-    --text-color: #000000; /* Black text for light mode */
-    --accent-color: #007BFF; /* Blue accent color for interactive elements */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #007BFF;
 }
 
-/* Define color scheme for dark mode */
+/* Dark mode colors */
 .dark-mode {
-    --background-color: #1e1e1e; /* Dark grey background for dark mode */
-    --text-color: #ffffff; /* White text for dark mode */
-    --accent-color: #4da6ff; /* Lighter blue accent for dark mode */
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --accent-color: #4da6ff;
 }
 
-/* Apply color scheme to body */
+/* Global styles */
 body {
-    background-color: var(--background-color); /* Use the background color variable */
-    color: var(--text-color); /* Use the text color variable */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
-    font-family: Arial, sans-serif; /* Set a default font family */
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header styles */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: var(--background-color); /* Use background color variable */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow to header */
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Navigation links container */
+/* Navigation */
 .links ul {
     display: flex;
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
-/* Individual navigation items */
 .links li {
     margin-right: 1rem;
 }
 
-/* Navigation link styles */
 .links a {
     text-decoration: none;
-    color: var(--text-color); /* Use text color variable */
-    font-weight: bold; /* Make links bold */
-    transition: color 0.3s; /* Smooth color transition on hover */
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Hover effect for navigation links */
 .links a:hover {
-    color: var(--accent-color); /* Change color on hover */
+    color: var(--accent-color);
 }
 
-/* Title styles */
+/* Mobile Navigation Toggle */
+.nav-toggle-button {
+    display: none;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 4px;
+}
+
+/* Title */
 .title {
-    text-align: center; /* Center align the title */
-    padding: 20px 0; /* Add padding above and below */
+    text-align: center;
+    padding: 20px 0;
 }
 
 .title p {
-    font-size: 2.5rem; /* Increase font size */
-    font-weight: bold; /* Make it bold */
-    color: var(--text-color); /* Use text color variable */
-    margin: 0; /* Remove default margin */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect for title */
 .title p:hover {
-    color: var(--accent-color); /* Change color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: var(--accent-color);
+    transform: scale(1.05);
 }
 
-/* Dark mode button styles */
+/* Dark Mode Button */
 #darkModeButton {
     padding: 0.5rem 1rem;
-    background-color: var(--text-color); /* Use text color for button background */
-    color: var(--background-color); /* Use background color for button text */
+    background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: opacity 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Hover effect for dark mode button */
 #darkModeButton:hover {
     opacity: 0.8;
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05);
 }
 
-/* Footer styles */
+/* Main Content */
+.main-content {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+}
+
+/* Project & Skills Lists */
+.main-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-content ul li {
+    margin-bottom: 10px;
+}
+
+.main-content ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.main-content ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
 footer {
     background-color: var(--background-color);
     color: var(--text-color);
     padding: 2rem 0;
     border-top: 1px solid var(--text-color);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 1rem;
-    min-width: 200px;
+    text-align: center;
 }
 
 .footer-section h3 {
-    margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
 .footer-section ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -142,50 +167,28 @@ footer {
     color: var(--accent-color);
 }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--text-color);
-    opacity: 0.7;
-}
-
-/* ...existing code... */
-
-/* Navigation toggle button styles */
-.nav-toggle-button {
-    display: none; /* Hide the button by default */
-    background-color: var(--text-color);
-    color: var(--background-color);
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 4px;
-}
-
-/* Media query for responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
     .links ul {
-        display: none; /* Hide the links by default on small screens */
-        flex-direction: column; /* Stack navigation links vertically */
-        align-items: center; /* Center align the stacked links */
+        display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     .links ul.show {
-        display: flex; /* Show the links when the button is clicked */
+        display: flex;
     }
 
     .nav-toggle-button {
-        display: block; /* Show the button on small screens */
+        display: block;
     }
 
     .links li {
-        margin: 0.5rem 0; /* Add vertical margin between stacked links */
+        margin: 0.5rem 0;
     }
 
     .title p {
-        font-size: 2rem; /* Reduce font size on smaller screens */
+        font-size: 2rem;
     }
 
     .footer-content {
@@ -197,32 +200,4 @@ footer {
         text-align: center;
         margin: 1rem 0;
     }
-}
-/* Main content styles */
-/* Ensure the main content is centered and has appropriate padding */
-
-.main-content {
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px; /* Add padding for spacing */
-    max-width: 800px; /* Set a maximum width for the content */
-}
-
-.main-content ul {
-    list-style-type: none;
-    padding: 0; /* Remove default padding */
-}
-
-.main-content ul li {
-    margin-bottom: 10px; /* Add some spacing between list items */
-}
-
-.main-content ul li a {
-    text-decoration: none;
-    color: var(--text-color); /* Ensure links use the text color variable */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.main-content ul li a:hover {
-    color: var(--accent-color); /* Change color on hover */
 }
