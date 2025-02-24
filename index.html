@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Camilo's Portfolio</title>
+    <title>Home - Camilo's Portfolio</title>
     <link href="/styles.css" rel="stylesheet">
 </head>
 
@@ -12,20 +12,21 @@
     <header-component></header-component>
 
     <main class="main-content">
-        <h1>Welcome to my page!</h1>
-        <p>I'm a programmer based in NYC. Feel free to look around and <a href="/src/contact.html">contact</a> me if you need me!</p>
-        <p id="time">Current time: </p>
+        <h1>Welcome to My Portfolio!</h1>
+        <p>I'm a <strong>Medical Interpreter</strong> and <strong>JavaScript Developer</strong> based in NYC.  
+           Feel free to explore my work, and don't hesitate to <a href="/src/contact.html">contact me</a>!</p>
+        
+        <h2>Current Time</h2>
+        <p id="time">Loading...</p>
+        
         <script>
-            // Automatically display the current time (hours, minutes, and seconds) using the user's local timezone and update every 1000 milliseconds
             function updateTime() {
-                const now = new Date(); // Create a new Date object
-                const hours = now.getHours().toString().padStart(2, '0'); // Get hours and pad with leading zero if needed
-                const minutes = now.getMinutes().toString().padStart(2, '0'); // Get minutes and pad with leading zero if needed
-                const seconds = now.getSeconds().toString().padStart(2, '0'); // Get seconds and pad with leading zero if needed
-                document.getElementById('time').textContent = `Current time: ${hours}:${minutes}:${seconds}`;
+                const now = new Date();
+                const timeString = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                document.getElementById('time').textContent = `Current time: ${timeString}`;
             }
             setInterval(updateTime, 1000);
-            updateTime(); // Call the function once to initialize the time immediately
+            updateTime();
         </script>
     </main>
 
