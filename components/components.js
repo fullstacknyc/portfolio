@@ -3,8 +3,9 @@ class HeaderComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <header>
+                <button id="navToggleButton" class="nav-toggle-button">☰</button>
                 <div class="links">
-                    <ul>
+                    <ul id="navMenu">
                         <li><a href="/index.html">Home</a></li>
                         <li><a href="/src/about.html">About</a></li>
                         <li><a href="/src/skills.html">Skills</a></li>
@@ -19,17 +20,32 @@ class HeaderComponent extends HTMLElement {
                 <div class="darkMode">
                     <button id="darkModeButton">Dark Mode</button>
                 </div>
-                <button id="navToggleButton" class="nav-toggle-button">☰</button>
             </header>
         `;
 
-        this.querySelector('#darkModeButton').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+        const navButton = this.querySelector("#navToggleButton");
+        const navMenu = this.querySelector("#navMenu");
+
+        navButton.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
         });
 
-        this.querySelector('#navToggleButton').addEventListener('click', () => {
-            const links = this.querySelector('.links ul');
-            links.classList.toggle('show');
+        // Close menu when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!this.contains(event.target) && navMenu.classList.contains("show")) {
+                navMenu.classList.remove("show");
+            }
+        });
+
+        // Dark Mode Persistence
+        const darkModeButton = this.querySelector('#darkModeButton');
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+
+        darkModeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         });
     }
 }
@@ -48,7 +64,7 @@ class FooterComponent extends HTMLElement {
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="/src/">About</a></li>
+                            <li><a href="/src/about.html">About</a></li>
                             <li><a href="/src/skills.html">Skills</a></li>
                             <li><a href="/src/projects.html">Projects</a></li>
                             <li><a href="/src/resume.html">Resume</a></li>

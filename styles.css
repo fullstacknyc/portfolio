@@ -59,36 +59,41 @@ header {
     color: var(--accent-color);
 }
 
-/* Mobile Navigation Toggle */
-.nav-toggle-button {
-    display: none;
-    background-color: var(--text-color);
-    color: var(--background-color);
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 4px;
-}
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-toggle-button {
+        display: block;
+        background-color: var(--text-color);
+        color: var(--background-color);
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 4px;
+    }
 
-/* Title */
-.title {
-    text-align: center;
-    padding: 20px 0;
-}
+    .links ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--background-color);
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        padding: 10px;
+    }
 
-.title p {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+    .links ul.show {
+        display: flex;
+    }
 
-.title p:hover {
-    color: var(--accent-color);
-    transform: scale(1.05);
+    .links li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
 /* Dark Mode Button */
@@ -105,34 +110,6 @@ header {
 #darkModeButton:hover {
     opacity: 0.8;
     transform: scale(1.05);
-}
-
-/* Main Content */
-.main-content {
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    max-width: 800px;
-}
-
-/* Project & Skills Lists */
-.main-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.main-content ul li {
-    margin-bottom: 10px;
-}
-
-.main-content ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s;
-}
-
-.main-content ul li a:hover {
-    color: var(--accent-color);
 }
 
 /* Footer */
@@ -165,39 +142,4 @@ footer {
 
 .footer-section a:hover {
     color: var(--accent-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .links ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .links ul.show {
-        display: flex;
-    }
-
-    .nav-toggle-button {
-        display: block;
-    }
-
-    .links li {
-        margin: 0.5rem 0;
-    }
-
-    .title p {
-        font-size: 2rem;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        text-align: center;
-        margin: 1rem 0;
-    }
 }
