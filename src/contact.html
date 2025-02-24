@@ -12,8 +12,26 @@
     <header-component></header-component>
 
     <main class="main-content">
-        <h1>Contact</h1>
-        <p>Content for contact goes here.</p>
+        <h1>Contact Me</h1>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button id="submit">Submit</button>
+        <p id="responseMessage"></p>
+        <script>
+            document.getElementById('submit').addEventListener('click', function() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && message) {
+                    document.getElementById('responseMessage').innerText = 'Thank you for your message!';
+                } else {
+                    document.getElementById('responseMessage').innerText = 'Please fill in all fields.';
+                }
+            });
+        </script>
+        <p>Or reach out via email: <a href="mailto:jgomezval@icloud.com"></a>
     </main>
 
     <footer-component></footer-component>
