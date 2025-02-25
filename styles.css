@@ -96,6 +96,13 @@ header {
     }
 }
 
+/* Hide the nav toggle button on wider screens */
+@media (min-width: 769px) {
+    .nav-toggle-button {
+        display: none;
+    }
+}
+
 /* Dark Mode Button */
 #darkModeButton {
     padding: 0.5rem 1rem;
