@@ -155,3 +155,14 @@ footer {
     max-width: 800px;
     margin: auto;
 }
+.main-content ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.main-content ul li a:hover {
+    color: var(--accent-color);
+}
+.main-content ul {
+    list-style-type: none;
+}
