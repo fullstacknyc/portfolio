@@ -125,7 +125,6 @@ footer {
     color: var(--text-color);
     padding: 2rem 0;
     border-top: 1px solid var(--text-color);
-    text-align: center;
 }
 
 .footer-section h3 {
