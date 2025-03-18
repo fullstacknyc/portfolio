@@ -6,7 +6,6 @@ body, h1, h3, p {
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: #f4f4f4;
     height: 100vh;
     overflow: hidden; /* Prevents default scrolling */
@@ -18,7 +17,6 @@ body {
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 10px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -40,10 +38,9 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     height: 100vh;
     overflow-y: auto;
-    scroll-snap-type: y mandatory; /* Enables vertical snap-scrolling */
+    scroll-snap-type: y mandatory; /* Enables full-page snap-scrolling */
     width: 100%;
     padding-top: 60px; /* Space for the fixed header */
 }
@@ -51,9 +48,8 @@ h1 {
 /* Individual project cards */
 .project-card {
     background-color: white;
-    width: 90%;
-    max-width: 400px;
-    height: 90vh; /* Each project fills most of the screen */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +57,7 @@ h1 {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start; /* Snaps project to screen */
+    scroll-snap-align: start; /* Forces full-page snapping */
     transition: transform 0.3s ease;
 }
 
@@ -79,6 +75,7 @@ h1 {
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 15px;
+    width: 80%;
 }
 
 .project-card a {
