@@ -19,27 +19,40 @@ header {
 h1 {
     font-size: 2.5rem;
     color: #333;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #projects-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-behavior: smooth; /* Adds smooth scrolling */
 }
 
 .project-card {
     background-color: white;
     padding: 20px;
-    margin: 10px;
     width: 250px;
+    height: 300px; /* Fixed height to keep cards uniform */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    flex-shrink: 0; /* Prevents the card from shrinking */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .project-card p {
