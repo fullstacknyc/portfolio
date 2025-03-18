@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
-        {name: "VanillaScript", description: "A website made purely with JavaScript to teach web development.", link: "https://vscript.vercel.app"},
-        {name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app"},
-        {name: "MDN Web Docs", description: "Comprehensive documentation for web technologies.", link: "https://developer.mozilla.org/"},
-        {name: "W3Schools", description: "Interactive tutorials for web development.", link: "https://www.w3schools.com/"},
-        {name: "Stack Overflow", description: "Q&A site for developers.", link: "https://stackoverflow.com/"},
-        {name: "GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/"}
+        { name: "VanillaScript", description: "A website made purely with JavaScript to teach web development.", link: "https://vscript.vercel.app" },
+        { name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app" },
+        { name: "MDN Web Docs", description: "Comprehensive documentation for web technologies.", link: "https://developer.mozilla.org/" },
+        { name: "W3Schools", description: "Interactive tutorials for web development.", link: "https://www.w3schools.com/" },
+        { name: "Stack Overflow", description: "Q&A site for developers.", link: "https://stackoverflow.com/" },
+        { name: "GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/" }
     ];
 
     const projectsContainer = document.getElementById("projects-container");
