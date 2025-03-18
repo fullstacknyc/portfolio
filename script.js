@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
         {name: "VanillaScript", description: "A website made purely with javaScript to teach web development.", link: "https://vscript.vercel.app"},
+        {name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app"},
+        {name: "VanillaScript", description: "A website made purely with javaScript to teach web development.", link: "https://vscript.vercel.app"},
+        {name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app"},
+        {name: "VanillaScript", description: "A website made purely with javaScript to teach web development.", link: "https://vscript.vercel.app"},
         {name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app"}
     ];
 
