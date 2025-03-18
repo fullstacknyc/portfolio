@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "SafePass", description: "A file transfer site for @prodKz", link: "https://prodkz.vercel.app" },
         { name: "MDN Web Docs", description: "Comprehensive documentation for web technologies.", link: "https://developer.mozilla.org/" },
         { name: "W3Schools", description: "Interactive tutorials for web development.", link: "https://www.w3schools.com/" },
-        { name: "Stack Overflow", description: "Q&A site for developers.", link: "https://stackoverflow.com/" },
-        { name: "GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/" }
+        { name: "Stack Overflow", description: "Q&A site for developers.", link: "https://stackoverflow.com/users/21625347/camilo?tab=profile" },
+        { name: "GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/fullstacknyc" }
     ];
 
     const projectsContainer = document.getElementById("projects-container");
