@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
-        {name: "VanillaScript", description: "A website made purely with javaScript to teach web development.", link: "https://vscript.vercel.app"},
-        {name: "Victoria's Garden", description: "A game made purely with javaScript to practice javaScript.", link: "#"},
-        {name: "Pip3k", description: "A pip-boy 3000 like app.", link: "#"},
+        {name: "VanillaScript", description: "A website made purely with javaScript to teach web development.", link: "https://vscript.vercel.app"}
     ];
 
     const projectsContainer = document.getElementById("projects-container");
