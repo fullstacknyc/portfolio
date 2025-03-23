@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
-        { name: "My Website", description: "Contact me or browse.", link: "https://vscript.vercel.app" },
-        { name: "My GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/fullstacknyc" },
-        { name: "My LinkedIn", description: "Connect with me professionally.", link: "https://www.linkedin.com/in/camilogomezvalencia" }
+        { name: "myDevGuides", description: "My personal project website. Contact me or explore.", link: "https://vscript.vercel.app" },
+        { name: "myLinkedIn", description: "Connect with me professionally.", link: "https://www.linkedin.com/in/camilogomezvalencia" },
+        { name: "myProjects", description: "A library of my projects.", link: "https://myprojects.vercel.app"}
     ];
 
     const projectsContainer = document.getElementById("projects-container");
