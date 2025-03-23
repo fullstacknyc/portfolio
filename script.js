@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
-        { name: "DevGuides", description: "Contact me or browse my website.", link: "https://vscript.vercel.app" },
+        { name: "My Website", description: "Contact me or browse.", link: "https://vscript.vercel.app" },
         { name: "My GitHub", description: "Host and collaborate on code projects.", link: "https://github.com/fullstacknyc" },
         { name: "My LinkedIn", description: "Connect with me professionally.", link: "https://www.linkedin.com/in/camilogomezvalencia" }
     ];
