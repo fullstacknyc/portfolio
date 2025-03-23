@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         projectCard.innerHTML = `
         <h3>${project.name}</h3>
         <p>${project.description}</p>
-        <a href="${project.link}" target="_blank">View Project</a>
+        <a href="${project.link}" target="_blank">Take Me There</a>
         `;
 
         projectsContainer.appendChild(projectCard);
