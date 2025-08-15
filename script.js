@@ -1,4 +1,4 @@
-document.getElementsByClassName("pause")[0].style.display = "none";
+document.getElementsByClassName("pause")[0].style.display = "flex";
 
 document.getElementsByClassName("viewport")[0].innerHTML = `
     <h1>1v1</h1>
