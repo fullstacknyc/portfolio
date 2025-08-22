@@ -1,11 +1,111 @@
-body {
-    background: black;
-    color: white;
-    text-align: center;
-    align-self:center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+/* ===== Tokens ===== */
+:root {
+  --bg: #0b0b0b;
+  --text: #ffffff;
+  --muted: #b4b4b4;
+  --accent: #7c5cff;
+  --maxw: 64rem;
+  --radius: 20px;
+  --gap: clamp(16px, 2.5vmin, 28px);
+  --pad: clamp(20px, 4vmin, 40px);
+  --title: clamp(32px, 8vmin, 64px);
+  --sub: clamp(14px, 2.2vmin, 18px);
 }
-p {
-    font-size: 40px;
-    margin-top: 25%;
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.skip-link:focus {
+  left: 12px; top: 12px; z-index: 9999;
+  padding: 8px 12px; background: #111; color: #fff; border-radius: 8px;
+}
+
+/* ===== Feed (TikTok-style) ===== */
+.feed {
+  height: 100vh;                 /* full viewport area */
+  overflow-y: auto;              /* scroll inside main */
+  scroll-snap-type: y mandatory; /* snap per “screen” */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Each card is a screen */
+.card {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+  background:
+    radial-gradient(1200px 600px at 10% 110%, rgba(124,92,255,0.08), transparent),
+    radial-gradient(1200px 600px at 90% -10%, rgba(98,217,184,0.07), transparent);
+}
+
+/* Content width */
+.card > .content {
+  width: min(100%, var(--maxw));
+}
+
+/* Hero */
+.hero-title {
+  font-size: var(--title);
+  line-height: 1.05;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+.hero-sub {
+  font-size: var(--sub);
+  color: var(--muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* Generic “lab/project” card */
+.lab {
+  gap: var(--gap);
+}
+.lab h2 {
+  margin: 0 0 8px 0;
+  font-size: clamp(22px, 4.5vmin, 36px);
+}
+.lab p { margin: 0; color: var(--muted); }
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* House “ad slot” placeholder (no third-party yet) */
+.ad-slot {
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  width: min(100%, var(--maxw));
+  min-height: 160px; /* reserves space to avoid CLS */
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+/* Focus rings for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }

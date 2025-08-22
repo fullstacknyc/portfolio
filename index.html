@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>camilo - home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camilo — Labs</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="color-scheme" content="dark light" />
 </head>
 <body>
-    <div>
-        <p>hello</p>
-    </div>
-    <script src="script.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6019552498430861"
-     crossorigin="anonymous"></script>
+  <a class="skip-link" href="#feed">Skip to feed</a>
+
+  <!-- App -->
+  <main id="feed" class="feed" aria-label="Scrolling feed">
+    <!-- First card (hero) is server-rendered so you see something instantly -->
+    <section class="card hero" data-type="hero">
+      <h1 id="hello-rotator" class="hero-title">hello</h1>
+      <p class="hero-sub">Use arrow/scroll to explore.</p>
+    </section>
+
+    <!-- Sentinel gets moved to the end as we append content -->
+    <div id="sentinel" aria-hidden="true"></div>
+  </main>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+
+  <!-- Keep ads off for now while we build. Re-add when ready.
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6019552498430861" crossorigin="anonymous"></script>
+  -->
 </body>
 </html>
