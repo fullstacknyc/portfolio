@@ -10,7 +10,6 @@ function changeText() {
 setInterval(changeText, 2000); // Change text every 2 seconds
 // Initial text
 changeText();
-// animation for the text: camilo777, then camilo, then cami, and it repeats
 
 // on hover of text, change the text to welcome to my portfolio
 textElement.addEventListener('mouseover', () => {
