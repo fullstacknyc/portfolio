@@ -1,4 +1,11 @@
 body {
     background: black;
-    color: white;;
+    color: white;
+    text-align: center;
+    align-self:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+p {
+    font-size: 40px;
+    margin: 20rem;
 }
