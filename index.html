@@ -3,30 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Camilo — Labs</title>
+  <title>Camilo — Portfolio Stream</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="color-scheme" content="dark light" />
 </head>
 <body>
   <a class="skip-link" href="#feed">Skip to feed</a>
 
-  <!-- App -->
-  <main id="feed" class="feed" aria-label="Scrolling feed">
-    <!-- First card (hero) is server-rendered so you see something instantly -->
+  <main id="feed" class="feed" aria-label="Scrolling portfolio feed">
+    <!-- Hero: instant paint -->
     <section class="card hero" data-type="hero">
       <h1 id="hello-rotator" class="hero-title">hello</h1>
-      <p class="hero-sub">Use arrow/scroll to explore.</p>
+      <p class="hero-sub">Scroll or use ↑/↓. This feed is my living portfolio.</p>
     </section>
 
-    <!-- Sentinel gets moved to the end as we append content -->
+    <!-- Sentinel for infinite scroll -->
     <div id="sentinel" aria-hidden="true"></div>
   </main>
 
-  <!-- JS -->
   <script src="script.js" defer></script>
-
-  <!-- Keep ads off for now while we build. Re-add when ready.
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6019552498430861" crossorigin="anonymous"></script>
-  -->
 </body>
 </html>
