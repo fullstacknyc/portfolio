@@ -29,7 +29,14 @@ body{
     radial-gradient(1200px 600px at 90% -10%, rgba(98,217,184,.07), transparent);
 }
 .card > .content{width:min(100%,var(--maxw))}
-.hero-title{font-size:var(--title);line-height:1.05;margin:0 0 8px;text-align:center}
+.hero-title {
+  transition: opacity .2s linear;
+}
+.hero-title.is-fading { opacity: .15; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-title { transition: none; }
+}
+
 .hero-sub{font-size:var(--sub);color:var(--muted);margin:0;text-align:center}
 
 /* Common */
