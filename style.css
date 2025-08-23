@@ -1,7 +1,17 @@
-:root { color-scheme: dark light; }
-body{
-  margin:0; min-height:100svh; display:grid; place-items:center;
-  background:#0b0b0b; color:#fff;
-  font:30px clamp(48px,12vmin,120px)/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+:root {color-scheme: dark light; }
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: #0b0b0b; color: #fff;
+    font: 300 camp(42px, 10vmin, 96px)/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica, Arial, sans-serif;
 }
-#hello{ margin:0; }
+.feed {
+    height: 100svh; overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    overscroll-behavior-y: contain;
+}
+.section {
+    min-height: 100svh; display: grid; place-items: center;
+    scroll-snap-align: start; padding: 4vmin;
+}
+h1, h2 { margin: 0;}
