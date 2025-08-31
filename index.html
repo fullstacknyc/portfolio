@@ -2,95 +2,178 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Camilo — JavaScript Developer</title>
+<title>Camilo - JavaScript Developer</title>
 <meta name="color-scheme" content="dark light">
 <style>
-  :root{--bg:#000;--fg:#fff;--muted:.72}
-  *{box-sizing:border-box}html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
-  main{height:100svh;display:grid;place-items:center;padding:6vmin}
-  .wrap{width:min(760px,92vw);display:grid;gap:1.25rem;text-align:center}
-  .pane{display:none}.pane.active{display:grid;gap:1rem}
-  h1,h2,p,a,small{margin:0;font-weight:400;font-size:1rem}
-  .muted{opacity:var(--muted)}
-  .row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
-  .btn{display:inline-block;border:1px solid #fff;padding:.5rem .9rem;border-radius:999px;color:inherit;text-decoration:none}
-  .btn:hover,.btn:focus-visible{background:#fff;color:#000;outline:none}
-  :focus-visible{outline:2px solid #fff;outline-offset:2px}
-  .card{border:1px solid #fff;border-radius:.8rem;padding:1rem;text-align:left}
-  .card h3{font-size:1rem;margin:0 0 .25rem}
-  .caret::after{content:"▌";margin-left:2px;animation:b 1s steps(1,end) infinite}
-  @keyframes b{50%{opacity:0}}
-  .fade{animation:f .24s ease-out}@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  :root {
+    --bg: #111;
+    --fg: #fff;
+    --line: #fff2;
+    --muted: .7;
+  }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.6 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+  }
+  main {
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 6vmin;
+  }
+  .wrap {
+    width: min(600px, 94vw);
+    display: grid;
+    gap: 2.5rem;
+    text-align: left;
+  }
+  .pane {
+    display: none;
+    border-left: 2px solid var(--line);
+    padding-left: 2rem;
+    min-height: 180px;
+  }
+  .pane.active {
+    display: block;
+    animation: fade-in .22s;
+  }
+  @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  h1, h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    letter-spacing: -1px;
+  }
+  .caret::after {
+    content: "▌";
+    margin-left: 2px;
+    animation: blink 1s steps(1,end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  ul, ol {
+    margin: 1.2rem 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin-bottom: .7rem;
+    font-size: 1.08rem;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity .15s;
+    opacity: .92;
+  }
+  a:hover, a:focus-visible {
+    opacity: 1;
+    text-decoration: none;
+    outline: none;
+  }
+  .muted { opacity: var(--muted); }
+  .line { border-top: 1px solid var(--line); margin: 2rem 0; }
 </style>
 <main>
   <section id="app" class="wrap" aria-live="polite"></section>
 </main>
+
+<!-- visible when JS is disabled -->
+<noscript>
+  <main style="padding:2rem;color:#fff;background:#111">Enable JavaScript to view this site.</main>
+</noscript>
+
 <script>
 (() => {
   const app = document.getElementById('app');
+  console.log('portfolio script loaded');
+  window.addEventListener('error', e => {
+    // show a visible error message so you can debug if the script fails
+    app.innerHTML = '<pre style="color:#fff;white-space:pre-wrap">JavaScript error: ' + (e && e.message) + '</pre>';
+    console.error('Captured error:', e);
+  });
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const RTL = new Set(['ar','he','fa','ur','ps']);
 
-  const LANGS = [['Hello','en'],['Hola','es'],['Bonjour','fr'],['Hallo','de'],['Ciao','it'],['こんにちは','ja'],['你好','zh'],['안녕하세요','ko'],['Namaste','hi'],['Marhaba','ar']];
-  const ABOUT = "Camilo — JavaScript developer focused on clean UI and fast, practical shipping.";
+  const LANGS = [['Hello','en'],['Hola','es'],['Bonjour','fr'],['Hallo','de'],['Ciao','it'],['こんにちは','ja'],['你好','zh'],['안녕하세요','ko'],['Greetings','hi'],['Hello','ar']];
+  const ABOUT = "Camilo - JavaScript developer focused on clean UI and fast, practical shipping.";
   const LINKS = [
     ['GitHub','https://github.com/fullstacknyc'],
     ['LinkedIn','https://www.linkedin.com/in/camilogomezvalencia/'],
     ['Email','mailto:jgomezval@icloud.com'],
-    ['Résumé (PDF)','Profile.pdf'],
+    ['Resume (PDF)','Profile.pdf'],
   ];
-  const CERTS = [
-    ['Software Engineering','https://www.coursera.org/account/accomplishments/verify/ITPNQ2TVQ8WB'],
-    ['Cybersecurity','https://www.coursera.org/account/accomplishments/records/VZ65P8Q2LAB9'],
-    ['HTML, CSS, & JavaScript','https://www.coursera.org/account/accomplishments/records/70CAM8RLT8Q9'],
-    ['Manage Security Risks','https://www.coursera.org/account/accomplishments/records/0LRFIKPF9BYT'],
-    ['Git and GitHub','https://www.coursera.org/account/accomplishments/records/T1SJO05J797Z']
-  ]
-  const PROJECT = { title:'audioCloud — File Transfer', desc:'Lightweight web app for fast, reliable file transfers with simple share links.', live:'#', code:'https://github.com/fullstacknyc' };
+  const PROJECT = { 
+    title:'audioCloud — File Transfer', 
+    desc:'Lightweight web app for fast, reliable file transfers with simple share links.',
+    live:'#',
+    code:'https://github.com/fullstacknyc'
+  };
 
-  let idx = 0, typed = false, lock = false; // linear state
+  let idx = 0, typed = [false, false, false, false], lock = false;
   const panes = [];
 
-  const el = (t,c,txt)=>{ const e=document.createElement(t); if(c) e.className=c; if(txt) e.textContent=txt; return e; };
-  const link = (t,h)=>{ const a=el('a','btn',t); a.href=h; a.target='_blank'; a.rel='noopener noreferrer'; return a; };
+  // Utility
+  const el = (t,c,txt) => {
+    const parts = String(t || 'div').trim().split(/\s+/);
+    const tag = parts[0] || 'div';
+    const clsFromTag = parts.slice(1);
+    const e = document.createElement(tag);
+    const classes = [];
+    if (clsFromTag.length) classes.push(...clsFromTag);
+    if (c) classes.push(c);
+    if (classes.length) e.className = classes.join(' ');
+    if (txt != null) e.textContent = txt;
+    return e;
+  };
   const sleep = ms => new Promise(r=>setTimeout(r,ms));
   const show = i => panes.forEach((p,n)=>p.classList.toggle('active',n===i));
 
-  // Pane 0: Hello (Apple-clean; big single word)
-  const p0 = el('div','pane active fade');
-  const hello = el('h1','caret'); hello.style.fontSize='clamp(12px,8vw,36px)'; p0.append(hello); panes.push(p0);
+  // Pane 0: Hello
+  const p0 = el('div','pane active');
+  const hello = el('h1 caret'); p0.append(hello); panes.push(p0);
 
-  // Pane 1: About (types once)
+  // Pane 1: About
   const p1 = el('div','pane');
-  const about = el('p','muted'); about.style.fontSize='clamp(14px,2.2vw,18px)'; p1.append(about); panes.push(p1);
+  const about = el('p muted'); p1.append(about); panes.push(p1);
 
-  // Pane 2: Links (revealed by its own control; links not nested inside the control)
+  // Pane 2: Links
   const p2 = el('div','pane');
-  const toggle = el('button'); toggle.type='button'; toggle.textContent='Links'; Object.assign(toggle.style,{background:'transparent',color:'inherit',border:'1px solid #fff',borderRadius:'999px',padding:'.5rem .9rem',cursor:'pointer'});
-  const linksRow = el('div','row'); linksRow.hidden = true;
-  LINKS.forEach(([t,h]) => linksRow.append(link(t,h)));
-  p2.append(toggle, linksRow); panes.push(p2);
+  const linksTitle = el('h2',null,'Links');
+  const linksList = el('ul');
+  LINKS.forEach(([t,h]) => {
+    const li = el('li');
+    const a = el('a',null,t); a.href=h; a.target='_blank'; a.rel='noopener noreferrer';
+    li.append(a); linksList.append(li);
+  });
+  p2.append(linksTitle, linksList); panes.push(p2);
 
-  // Pane 3: Project (single)
+  // Pane 3: Project
   const p3 = el('div','pane');
-  const card = el('article','card');
-  const h3 = el('h3',null,PROJECT.title);
-  const d  = el('p',null,PROJECT.desc);
-  const actions = el('div','row'); actions.append(link('Live',PROJECT.live), link('Code',PROJECT.code));
-  card.append(h3,d,actions); p3.append(card); panes.push(p3);
+  const projTitle = el('h2',null,PROJECT.title);
+  const projDesc = el('p',null,PROJECT.desc);
+  const projLinks = el('ul');
+  [
+    ['Live', PROJECT.live],
+    ['Code', PROJECT.code]
+  ].forEach(([t,h]) => {
+    const li = el('li');
+    const a = el('a',null,t); a.href=h; a.target='_blank'; a.rel='noopener noreferrer';
+    li.append(a); projLinks.append(li);
+  });
+  p3.append(projTitle, projDesc, projLinks); panes.push(p3);
 
   panes.forEach(p=>app.append(p));
 
-  // Interactions (O(1) per event, O(n) only when rendering lists once)
-  toggle.addEventListener('click', () => {
-    const open = linksRow.hidden;
-    linksRow.hidden = !open;
-    toggle.style.transform = open ? 'scale(.96)' : 'scale(1)';
-    toggle.style.opacity = open ? '.86' : '1';
-  }, {passive:false});
-
-  const go = n => { idx = Math.max(0, Math.min(panes.length-1, n)); show(idx); if(idx===1 && !typed) typeAbout(); if(idx!==2){ linksRow.hidden = true; toggle.style.transform='scale(1)'; toggle.style.opacity='1'; } };
+  // Navigation
+  const go = n => {
+    idx = Math.max(0, Math.min(panes.length-1, n));
+    show(idx);
+    if (!typed[idx]) typePane(idx);
+  };
 
   addEventListener('wheel', e => { e.preventDefault(); if(lock) return; lock=true; const d=Math.sign(e.deltaY); if(d>0) go(idx+1); if(d<0) go(idx-1); setTimeout(()=>lock=false,200); }, {passive:false});
   addEventListener('keydown', e => {
@@ -99,13 +182,32 @@
     if(k==='Home'){ e.preventDefault(); go(0); }
     if(k==='End'){ e.preventDefault(); go(panes.length-1); }
   }, {passive:false});
-
   let y0=null;
   addEventListener('touchstart',e=>{ if(e.touches.length===1) y0=e.touches[0].clientY; },{passive:true});
   addEventListener('touchmove',e=>{ if(y0==null) return; const dy=e.touches[0].clientY-y0; if(Math.abs(dy)<24) return; e.preventDefault(); if(dy<0) go(idx+1); else go(idx-1); y0=null; },{passive:false});
   addEventListener('touchend',()=>{ y0=null; },{passive:true});
 
-  // Typing
+// Typing effects for all panes
+  // helper to type text into an element, pause, then delete it
+  async function typeReplace(el, text, speed = 90, pause = 700) {
+    // type
+    el.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+      el.textContent += text[i];
+      await sleep(speed);
+    }
+    // pause with full text shown
+    await sleep(pause);
+    // delete
+    const delSpeed = Math.max(20, Math.floor(speed / 2));
+    for (let i = text.length - 1; i >= 0; i--) {
+      el.textContent = text.slice(0, i);
+      await sleep(delSpeed);
+    }
+    // small gap before next cycle
+    await sleep(120);
+  }
+
   (async function cycleHello(){
     if(reduce){ hello.textContent='Hello'; return; }
     let i=0;
@@ -116,14 +218,28 @@
     }
   })();
 
-  async function typeAbout(){
-    typed = true;
-    if(reduce){ about.textContent = ABOUT; return; }
-    about.textContent=''; for(let i=0;i<ABOUT.length;i++){ about.textContent+=ABOUT[i]; await sleep(14); }
-  }
-  async function typeReplace(node,text,s=90,hold=700){
-    if(reduce){ node.textContent=text; return; }
-    node.textContent=''; for(let i=0;i<text.length;i++){ node.textContent+=text[i]; await sleep(s); } await sleep(hold);
+  async function typePane(idx) {
+    typed[idx] = true;
+    if(reduce) {
+      if(idx===1) about.textContent = ABOUT;
+      if(idx===2) linksList.querySelectorAll('li').forEach((li,i)=>li.style.opacity=1);
+      if(idx===3) { projDesc.textContent = PROJECT.desc; projLinks.querySelectorAll('li').forEach(li=>li.style.opacity=1); }
+      return;
+    }
+    if(idx===1) {
+      about.textContent = '';
+      for(let i=0;i<ABOUT.length;i++){ about.textContent+=ABOUT[i]; await sleep(14); }
+    }
+    if(idx===2) {
+      linksList.querySelectorAll('li').forEach(li=>li.style.opacity=0);
+      for(let li of linksList.children) { await sleep(120); li.style.opacity=1; }
+    }
+    if(idx===3) {
+      projDesc.textContent = '';
+      for(let i=0;i<PROJECT.desc.length;i++){ projDesc.textContent+=PROJECT.desc[i]; await sleep(14); }
+      projLinks.querySelectorAll('li').forEach(li=>li.style.opacity=0);
+      for(let li of projLinks.children) { await sleep(120); li.style.opacity=1; }
+    }
   }
 })();
 </script>
