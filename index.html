@@ -1,85 +1,374 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Camilo — JavaScript Developer</title>
-<meta name="description" content="Camilo • JavaScript developer focused on clean UI and fast, practical shipping." />
-<meta name="theme-color" content="#111" />
-<meta name="color-scheme" content="dark light">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡️</text></svg>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camilo — JavaScript Developer</title>
+  <meta name="description" content="Camilo • JavaScript developer focused on clean UI and fast, practical shipping." />
+  <meta name="theme-color" content="#111" />
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="/">
+  <!-- Open Graph for link previews -->
+  <meta property="og:title" content="Camilo — JavaScript Developer">
+  <meta property="og:description" content="Web projects, resume, and contact information by Camilo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡️</text></svg>">
 <style>
-  :root{
-    --bg:#0f0f10; --fg:#fff; --muted:.72; --line:#fff2; --accent:#9efc; --radius:14px;
+  :root {
+    --bg: #0f0f10;
+    --fg: #fff;
+    --muted: .72;
+    --line: #fff2;
+    --accent: #9efc;
+    --radius: 14px;
   }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Noto Sans", Arial; }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Noto Sans", Arial;
+  }
 
   /* Layout */
-  header{ position:fixed; inset:0 auto auto 0; height:56px; width:100%; display:flex; align-items:center; gap:.9rem; padding:0 16px; background:linear-gradient(#0009,#0000); backdrop-filter:saturate(1.2) blur(2px); border-bottom:1px solid var(--line); z-index:5; }
-  header .brand{ font-weight:600; letter-spacing:.2px; }
-  header .spacer{ flex:1; }
-  header .btn{ border:1px solid var(--line); border-radius:10px; padding:6px 10px; background:#0006; color:inherit; cursor:pointer; }
-  header .btn:hover{ background:#111; }
+  header {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 56px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: 0 16px;
+    background: linear-gradient(#0009, #0000);
+    backdrop-filter: saturate(1.2) blur(2px);
+    border-bottom: 1px solid var(--line);
+    z-index: 5;
+  }
 
-  .progress{ position:fixed; top:56px; left:0; height:3px; width:0; background:linear-gradient(90deg,#fff,#9ef); opacity:.85; z-index:6; transition:width .2s ease; }
+  header .brand {
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
 
-  main{ height:100svh; overflow-y:auto; scroll-snap-type: y mandatory; scroll-behavior:smooth; }
-  section.section{ scroll-snap-align:start; min-height:100svh; display:grid; place-items:center; padding:88px 6vmin 10vmin; }
+  header .spacer {
+    flex: 1;
+  }
 
-  .wrap{ width:min(760px, 94vw); margin:0 auto; display:grid; gap:2.2rem; }
-  h1,h2{ letter-spacing:-.015em; margin:0 0 .6rem 0; }
-  h1{ font-size: clamp(2rem, 3.5vw + 1rem, 3rem); font-weight:700; }
-  h2{ font-size: clamp(1.3rem, 1.2vw + 1rem, 1.8rem); font-weight:600; }
-  p{ margin:.4rem 0 0 0; }
-  .muted{ opacity:var(--muted); }
-  .line{ border-top:1px solid var(--line); margin:1.4rem 0; }
+  header .btn {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 10px;
+    background: #0006;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  header .btn:hover {
+    background: #111;
+  }
+
+  .progress {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, #fff, #9ef);
+    opacity: .85;
+    z-index: 6;
+    transition: width .2s ease;
+  }
+
+  main {
+    height: 100svh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  section.section {
+    scroll-snap-align: start;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 88px 6vmin 10vmin;
+  }
+
+  .wrap {
+    width: min(760px, 94vw);
+    margin: 0 auto;
+    display: grid;
+    gap: 2.2rem;
+  }
+
+  h1,
+  h2 {
+    letter-spacing: -.015em;
+    margin: 0 0 .6rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 3.5vw + 1rem, 3rem);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 1.2vw + 1rem, 1.8rem);
+    font-weight: 600;
+  }
+
+  p {
+    margin: .4rem 0 0 0;
+  }
+
+  .muted {
+    opacity: var(--muted);
+  }
+
+  .line {
+    border-top: 1px solid var(--line);
+    margin: 1.4rem 0;
+  }
 
   /* Hello panel */
-  .hero{ text-align:left; }
-  .hello{ display:flex; align-items:baseline; gap:.4ch; }
-  .caret::after{ content:"▌"; margin-left:2px; animation:blink 1s steps(1, end) infinite; }
-  @keyframes blink{ 50%{ opacity:0 } }
-  .hint{ position:fixed; left:50%; bottom:20px; transform:translateX(-50%); font-size:.95rem; opacity:.8; background:#0008; border:1px solid var(--line); padding:8px 12px; border-radius:var(--radius); z-index:3; }
+  .hero {
+    text-align: left;
+  }
+
+  .hello {
+    display: flex;
+    align-items: baseline;
+    gap: .4ch;
+  }
+
+  .caret::after {
+    content: "▌";
+    margin-left: 2px;
+    animation: blink 1s steps(1, end) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0
+    }
+  }
+
+  .hint {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    font-size: .95rem;
+    opacity: .8;
+    background: #0008;
+    border: 1px solid var(--line);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    z-index: 3;
+  }
 
   /* Links list */
-  ul.links{ list-style:none; padding:0; margin:0; display:grid; gap:.6rem; }
-  ul.links li a{ color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; background:#0006; }
-  ul.links li a:hover{ background:#111; }
-  .ext{ opacity:.6 }
+  ul.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .6rem;
+  }
+
+  ul.links li a {
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0006;
+  }
+
+  ul.links li a:hover {
+    background: #111;
+  }
+
+  .ext {
+    opacity: .6
+  }
 
   /* Projects grid */
-  .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
-  .card{ border:1px solid var(--line); border-radius:14px; padding:14px; background:#0a0a0a; display:grid; gap:10px; }
-  .tagrow{ display:flex; flex-wrap:wrap; gap:6px; }
-  .tag{ border:1px solid var(--line); border-radius:999px; padding:2px 8px; font-size:.78rem; opacity:.85 }
-  .actions{ display:flex; gap:8px; }
-  .action{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:10px; padding:7px 10px; background:#0006; text-decoration:none; color:inherit; }
-  .action:hover{ background:#111; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    background: #0a0a0a;
+    display: grid;
+    gap: 10px;
+  }
+
+  .tagrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: .78rem;
+    opacity: .85
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 7px 10px;
+    background: #0006;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .action:hover {
+    background: #111;
+  }
 
   /* Modal for project details */
-  dialog#projectModal{ border:none; padding:0; border-radius:16px; background:#0b0b0c; color:inherit; width:min(820px, 96vw); }
-  dialog::backdrop{ background:#000a; backdrop-filter: blur(3px); }
-  .modal-body{ padding:18px; }
-  .modal-head{ display:flex; gap:12px; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--line); padding:12px 18px; }
-  .modal-close{ border:1px solid var(--line); background:#0006; color:inherit; border-radius:10px; padding:6px 10px; cursor:pointer; }
+  dialog#projectModal {
+    border: none;
+    padding: 0;
+    border-radius: 16px;
+    background: #0b0b0c;
+    color: inherit;
+    width: min(820px, 96vw);
+  }
+
+  dialog::backdrop {
+    background: #000a;
+    backdrop-filter: blur(3px);
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+
+  .modal-head {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 18px;
+  }
+
+  .modal-close {
+    border: 1px solid var(--line);
+    background: #0006;
+    color: inherit;
+    border-radius: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
 
   /* Command Palette */
-  #cmdk[open]{ display:grid; place-items:center; }
-  #cmdk{ border:none; padding:0; background:transparent; }
-  #cmdk .sheet{ width:min(680px,94vw); background:#111; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
-  #cmdk header{ position:static; height:auto; border:none; background:#0f0f10; padding:10px 12px; }
-  #cmdk input{ width:100%; background:#000; color:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:10px; }
-  #cmdk .list{ max-height:52vh; overflow:auto; padding:10px; display:grid; gap:6px; }
-  #cmdk button.item{ text-align:left; border:1px solid var(--line); background:#0006; color:inherit; border-radius:10px; padding:10px; }
-  #cmdk button.item:hover{ background:#111; }
+  #cmdk[open] {
+    display: grid;
+    place-items: center;
+  }
+
+  #cmdk {
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  #cmdk .sheet {
+    width: min(680px, 94vw);
+    background: #111;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  #cmdk header {
+    position: static;
+    height: auto;
+    border: none;
+    background: #0f0f10;
+    padding: 10px 12px;
+  }
+
+  #cmdk input {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  #cmdk .list {
+    max-height: 52vh;
+    overflow: auto;
+    padding: 10px;
+    display: grid;
+    gap: 6px;
+  }
+
+  #cmdk button.item {
+    text-align: left;
+    border: 1px solid var(--line);
+    background: #0006;
+    color: inherit;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  #cmdk button.item:hover {
+    background: #111;
+  }
 
   /* Accessibility & reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    *{ animation: none !important; transition: none !important; scroll-behavior:auto !important; }
-    .caret::after{ animation:none }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    .caret::after {
+      animation: none
+    }
   }
 </style>
+
+</head>
 <body>
   <header>
     <div class="brand">Camilo — JavaScript Developer</div>
@@ -123,273 +412,274 @@
     </main>
   </noscript>
 
-<script>
-(()=>{
-  const log = (...a)=>console.log('%cportfolio','color:#9ef', ...a);
-  const scroller = document.getElementById('scroller');
-  const progress = document.getElementById('progress');
-  const hint = document.getElementById('hint');
-  const cmdk = document.getElementById('cmdk');
-  const cmdInput = document.getElementById('cmdInput');
-  const cmdList = document.getElementById('cmdList');
+  <script>
+    (() => {
+      const log = (...a) => console.log('%cportfolio', 'color:#9ef', ...a);
+      const scroller = document.getElementById('scroller');
+      const progress = document.getElementById('progress');
+      const hint = document.getElementById('hint');
+      const cmdk = document.getElementById('cmdk');
+      const cmdInput = document.getElementById('cmdInput');
+      const cmdList = document.getElementById('cmdList');
 
-  // Locale + direction
-  const RTL = new Set(['ar','he','fa','ur','ps']);
-  const HELLOS = [['Hello','en'],['Hola','es'],['Bonjour','fr'],['Hallo','de'],['Ciao','it'],['こんにちは','ja'],['你好','zh'],['안녕하세요','ko'],['नमस्ते','hi'],['مرحبا','ar']];
+      // Locale + direction
+      const RTL = new Set(['ar', 'he', 'fa', 'ur', 'ps']);
+      const HELLOS = [['Hello', 'en'], ['Hola', 'es'], ['Bonjour', 'fr'], ['Hallo', 'de'], ['Ciao', 'it'], ['こんにちは', 'ja'], ['你好', 'zh'], ['안녕하세요', 'ko'], ['नमस्ते', 'hi'], ['مرحبا', 'ar']];
 
-  // Data: edit here to add projects/links indefinitely
-  const LINKS = [
-    { label:'GitHub', href:'https://github.com/fullstacknyc' },
-    { label:'LinkedIn', href:'https://www.linkedin.com/in/camilogomezvalencia/' },
-    { label:'Email', href:'mailto:jgomezval@icloud.com' },
-    { label:'Resume (PDF)', href:'Profile.pdf' }
-  ];
+      // Data: edit here to add projects/links indefinitely
+      const LINKS = [
+        { label: 'GitHub', href: 'https://github.com/fullstacknyc' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/camilogomezvalencia/' },
+        { label: 'Email', href: 'mailto:jgomezval@icloud.com' },
+        { label: 'Resume (PDF)', href: 'Profile.pdf' }
+      ];
 
-  const PROJECTS = [
-    {
-      slug:'audiocloud',
-      title:'audioCloud — File Transfer',
-      desc:'Lightweight web app for fast, reliable file transfers with simple share links.',
-      live:'https://www.audio-cloud.com',
-      code:'https://github.com/fullstacknyc/s3-audio-uploader',
-      tags:['JS','S3','Presigned URLs','Drag & Drop'],
-      demo:'uploader'
-    },
-    {
-      slug:'vanilla-portfolio',
-      title:'This Site — Single File',
-      desc:'A truthful, dependency-free portfolio that showcases modern Web APIs and data-driven content.',
-      code:'https://github.com/fullstacknyc',
-      tags:['Vanilla JS','Accessibility','Routing','Perf'],
-      demo:'none'
-    }
-  ];
+      const PROJECTS = [
+        {
+          slug: 'audiocloud',
+          title: 'audioCloud — File Transfer',
+          desc: 'Lightweight web app for fast, reliable file transfers with simple share links.',
+          live: 'https://www.audio-cloud.com',
+          code: 'https://github.com/fullstacknyc/s3-audio-uploader',
+          tags: ['JS', 'S3', 'Presigned URLs', 'Drag & Drop'],
+          demo: 'uploader'
+        },
+        {
+          slug: 'vanilla-portfolio',
+          title: 'This Site — Single File',
+          desc: 'A truthful, dependency-free portfolio that showcases modern Web APIs and data-driven content.',
+          code: 'https://github.com/fullstacknyc',
+          tags: ['Vanilla JS', 'Accessibility', 'Routing', 'Perf'],
+          demo: 'none'
+        }
+      ];
 
-  const SECTIONS = [
-    { id:'hello', title:'', build: buildHello },
-    { id:'about', title:'About', build: buildAbout },
-    { id:'links', title:'Links', build: buildLinks },
-    { id:'projects', title:'Projects', build: buildProjects }
-  ];
+      const SECTIONS = [
+        { id: 'hello', title: '', build: buildHello },
+        { id: 'about', title: 'About', build: buildAbout },
+        { id: 'links', title: 'Links', build: buildLinks },
+        { id: 'projects', title: 'Projects', build: buildProjects }
+      ];
 
-  // Build sections
-  SECTIONS.forEach(s=>{
-    const sec = document.createElement('section');
-    sec.className='section';
-    sec.id = s.id;
-    const wrap = document.createElement('div');
-    wrap.className='wrap';
-    // heading (visible immediately; animated content comes below)
-    if(s.title){ const h = document.createElement('h1'); h.textContent = s.title; wrap.appendChild(h); }
-    s.build(wrap);
-    sec.appendChild(wrap);
-    scroller.appendChild(sec);
-  });
-
-  // Hello
-  function buildHello(w){
-    const hero = document.createElement('div'); hero.className='hero';
-    const hello = document.createElement('div'); hello.className='hello caret'; hello.setAttribute('aria-live','polite');
-    const title = document.createElement('h1'); title.textContent = 'JavaScript Developer';
-    const sub = document.createElement('p'); sub.className='muted';
-    sub.textContent = 'Clean UI. Fast shipping. Vanilla-first mindset with thoughtful use of Web APIs.';
-    hero.append(hello, title, sub);
-    w.append(hero);
-
-    // type/cycle hello
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce){ hello.textContent = 'Hello'; return; }
-    (async function loop(){
-      let i=0; while(document.body){
-        const [word, lang] = HELLOS[i++ % HELLOS.length];
-        hello.lang = lang; hello.dir = RTL.has(lang)?'rtl':'ltr';
-        await typeReplace(hello, word, 90, 700);
-      }
-    })();
-  }
-
-  // About
-  function buildAbout(w){
-    const p = document.createElement('p'); p.className='muted';
-    const text = "Camilo — JavaScript developer focused on clean UI and fast, practical shipping. Comfortable across HTML, CSS, JavaScript (ES6+), Git, npm, React, Node.js, Express, MongoDB, and RESTful APIs. I build sites like this and add the features clients actually need.";
-    w.append(p);
-    typeIn(p, text, 14);
-  }
-
-  // Links
-  function buildLinks(w){
-    const list = document.createElement('ul'); list.className='links';
-    for(const {label, href} of LINKS){
-      const li = document.createElement('li');
-      const a = document.createElement('a'); a.href=href; a.target='_blank'; a.rel='noopener noreferrer';
-      a.innerHTML = `<span>${label}</span><span class="ext">↗</span>`;
-      li.style.opacity=0; li.append(a); list.append(li);
-    }
-    w.append(list);
-    // sequential reveal
-    (async()=>{ for(const li of list.children){ await sleep(120); li.style.opacity=1; }})();
-  }
-
-  // Projects index grid
-  function buildProjects(w){
-    const grid = document.createElement('div'); grid.className='grid';
-    for(const p of PROJECTS){
-      const card = document.createElement('article'); card.className='card'; card.tabIndex=0; card.setAttribute('data-slug',p.slug);
-      const h = document.createElement('h2'); h.textContent = p.title; card.append(h);
-      const d = document.createElement('p'); d.className='muted'; d.textContent = p.desc; card.append(d);
-      const tagrow = document.createElement('div'); tagrow.className='tagrow';
-      for(const t of (p.tags||[])){ const span = document.createElement('span'); span.className='tag'; span.textContent=t; tagrow.append(span); }
-      card.append(tagrow);
-      const actions = document.createElement('div'); actions.className='actions';
-      if(p.live){ actions.append(action('Live', p.live)); }
-      if(p.code){ actions.append(action('Code', p.code)); }
-      actions.append(button('Details', ()=>openProject(p.slug)));
-      card.append(actions);
-      card.addEventListener('click', e=>{ if(!(e.target instanceof HTMLAnchorElement)) openProject(p.slug); });
-      card.addEventListener('keypress', e=>{ if(e.key==='Enter') openProject(p.slug); });
-      grid.append(card);
-    }
-    w.append(grid);
-  }
-
-  function action(label, href){ const a=document.createElement('a'); a.className='action'; a.href=href; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=label; return a; }
-  function button(label, on){ const a=document.createElement('a'); a.href='#'; a.className='action'; a.textContent=label; a.addEventListener('click', e=>{ e.preventDefault(); on(); }); return a; }
-
-  // Typing utils
-  function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
-  async function typeReplace(el, text, speed=90, pause=700){
-    el.textContent=''; for(let i=0;i<text.length;i++){ el.textContent+=text[i]; await sleep(speed); }
-    await sleep(pause);
-    for(let i=text.length-1;i>=0;i--){ el.textContent=text.slice(0,i); await sleep(Math.max(20, speed/2)); }
-    await sleep(120);
-  }
-  async function typeIn(el, text, speed=14){
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce){ el.textContent = text; return; }
-    el.textContent=''; for(let i=0;i<text.length;i++){ el.textContent+=text[i]; await sleep(speed); }
-  }
-
-  // Scroll progress
-  const observer = new IntersectionObserver(entries=>{
-    const vis = entries.filter(e=>e.isIntersecting).sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
-    if(!vis) return; const idx = SECTIONS.findIndex(s=>s.id===vis.target.id);
-    progress.style.width = ((idx+1)/SECTIONS.length*100)+'%';
-    if(idx>0) hint.style.display='none';
-    // reflect in URL hash
-    history.replaceState(null,'','#'+vis.target.id);
-  }, { root: scroller, threshold:[0, .25, .5, .75, 1] });
-
-  // observe sections
-  queueMicrotask(()=>{
-    document.querySelectorAll('section.section').forEach(sec=>observer.observe(sec));
-    // jump to hash at load
-    const target = document.getElementById(location.hash.slice(1));
-    if(target) target.scrollIntoView({block:'start'});
-  });
-
-  // Keyboard navigation
-  addEventListener('keydown', e=>{
-    const k=e.key; if(['ArrowDown','PageDown'].includes(k)){ e.preventDefault(); page(1); }
-    if(['ArrowUp','PageUp'].includes(k)){ e.preventDefault(); page(-1); }
-    if(k==='Home'){ e.preventDefault(); scrollToSection(0); }
-    if(k==='End'){ e.preventDefault(); scrollToSection(SECTIONS.length-1); }
-    if((e.metaKey||e.ctrlKey) && k.toLowerCase()==='k'){ e.preventDefault(); openCmd(); }
-  }, { passive:false });
-
-  function currentIndex(){
-    const id = location.hash.slice(1) || SECTIONS[0].id;
-    return Math.max(0, SECTIONS.findIndex(s=>s.id===id));
-  }
-  function sectionEl(i){ return document.getElementById(SECTIONS[i].id); }
-  function scrollToSection(i){ sectionEl(i)?.scrollIntoView({behavior:'smooth', block:'start'}); }
-  function page(delta){ let i=currentIndex()+delta; i=Math.max(0, Math.min(SECTIONS.length-1, i)); scrollToSection(i); }
-
-  // Command palette
-  const commands = [];
-  function addCommand(label, run){ commands.push({label, run}); }
-  // core commands
-  SECTIONS.forEach((s,i)=> addCommand('Go: '+(s.title||'Hello'), ()=>scrollToSection(i)) );
-  addCommand('Copy Email', ()=>navigator.clipboard.writeText('jgomezval@icloud.com'));
-  addCommand('Toggle Reduced Motion Class', ()=>document.documentElement.classList.toggle('no-motion'));
-  // project commands
-  PROJECTS.forEach(p=> addCommand('Open project: '+p.title, ()=>openProject(p.slug)) );
-
-  function openCmd(){ cmdk.showModal(); cmdInput.value=''; renderCmd(''); cmdInput.focus(); }
-  function closeCmd(){ cmdk.close(); document.body.focus(); }
-  function renderCmd(q){
-    const ql=q.toLowerCase(); cmdList.innerHTML='';
-    commands.filter(c=>c.label.toLowerCase().includes(ql)).forEach(c=>{
-      const b=document.createElement('button'); b.className='item'; b.textContent=c.label; b.onclick=()=>{ c.run(); closeCmd(); };
-      cmdList.append(b);
-    });
-  }
-  document.getElementById('openCmd').addEventListener('click', e=>{ e.preventDefault(); openCmd(); });
-  cmdk.addEventListener('cancel', e=>{ e.preventDefault(); closeCmd(); });
-  cmdk.addEventListener('click', e=>{ if(e.target===cmdk) closeCmd(); });
-  cmdInput.addEventListener('input', e=>renderCmd(e.target.value));
-
-  // Project modal logic
-  const pm = document.getElementById('projectModal');
-  const pmClose = document.getElementById('pmClose');
-  const pmTitle = document.getElementById('pmTitle');
-  const pmDesc = document.getElementById('pmDesc');
-  const pmTags = document.getElementById('pmTags');
-  const pmActions = document.getElementById('pmActions');
-  const pmDemo = document.getElementById('pmDemo');
-
-  pmClose.addEventListener('click', ()=>pm.close());
-  pm.addEventListener('cancel', e=>{ e.preventDefault(); pm.close(); });
-
-  function openProject(slug){
-    const p = PROJECTS.find(x=>x.slug===slug); if(!p) return;
-    pmTitle.textContent = p.title;
-    pmDesc.textContent = p.desc;
-    pmTags.innerHTML=''; for(const t of (p.tags||[])){ const s=document.createElement('span'); s.className='tag'; s.textContent=t; pmTags.append(s); }
-    pmActions.innerHTML=''; if(p.live) pmActions.append(action('Live', p.live)); if(p.code) pmActions.append(action('Code', p.code));
-    pmDemo.innerHTML='';
-    if(p.demo && p.demo!=='none') mountDemo(pmDemo, p.demo);
-    pm.showModal();
-  }
-
-  function mountDemo(container, type){
-    if(type==='uploader'){
-      const box = document.createElement('div'); box.style.cssText='border:1px dashed var(--line); border-radius:12px; padding:16px; background:#0005;';
-      const title = document.createElement('div'); title.textContent = 'Demo: drag files here (simulated)';
-      const out = document.createElement('pre'); out.textContent=''; out.style.whiteSpace='pre-wrap';
-      box.append(title, out); container.append(box);
-      box.addEventListener('dragover', e=>{ e.preventDefault(); box.style.background='#111'; });
-      box.addEventListener('dragleave', ()=>{ box.style.background='#0005'; });
-      box.addEventListener('drop', e=>{
-        e.preventDefault(); const files=[...e.dataTransfer.files].map(f=>({name:f.name, size:f.size}));
-        out.textContent = 'Queued files (mocked):\n' + JSON.stringify(files, null, 2) + '\n\nWould request presigned URLs and stream via fetch().';
-        box.style.background='#0005';
+      // Build sections
+      SECTIONS.forEach(s => {
+        const sec = document.createElement('section');
+        sec.className = 'section';
+        sec.id = s.id;
+        const wrap = document.createElement('div');
+        wrap.className = 'wrap';
+        // heading (visible immediately; animated content comes below)
+        if (s.title) { const h = document.createElement('h1'); h.textContent = s.title; wrap.appendChild(h); }
+        s.build(wrap);
+        sec.appendChild(wrap);
+        scroller.appendChild(sec);
       });
-    }
-  }
 
-  // Download self as single file (for the homage)
-  document.getElementById('downloadSrc').addEventListener('click', e=>{
-    e.preventDefault();
-    const html = '<!doctype html>\n' + document.documentElement.outerHTML;
-    const blob = new Blob([html], {type:'text/html'});
-    const url = URL.createObjectURL(blob);
-    const a=document.createElement('a'); a.href=url; a.download='camilo-portfolio.html'; a.click();
-    URL.revokeObjectURL(url);
-  });
+      // Hello
+      function buildHello(w) {
+        const hero = document.createElement('div'); hero.className = 'hero';
+        const hello = document.createElement('div'); hello.className = 'hello caret'; hello.setAttribute('aria-live', 'polite');
+        const title = document.createElement('h1'); title.textContent = 'JavaScript Developer';
+        const sub = document.createElement('p'); sub.className = 'muted';
+        sub.textContent = 'Clean UI. Fast shipping. Vanilla-first mindset with thoughtful use of Web APIs.';
+        hero.append(hello, title, sub);
+        w.append(hero);
 
-  // Hash navigation on load for direct links
-  addEventListener('hashchange', ()=>{
-    const id = location.hash.slice(1);
-    const el = document.getElementById(id);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  });
+        // type/cycle hello
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) { hello.textContent = 'Hello'; return; }
+        (async function loop() {
+          let i = 0; while (document.body) {
+            const [word, lang] = HELLOS[i++ % HELLOS.length];
+            hello.lang = lang; hello.dir = RTL.has(lang) ? 'rtl' : 'ltr';
+            await typeReplace(hello, word, 90, 700);
+          }
+        })();
+      }
 
-  // Devtools hello
-  console.groupCollapsed('%cportfolio init','font-weight:600;color:#9ef');
-  log('sections', SECTIONS.map(s=>s.id));
-  log('projects', PROJECTS.map(p=>p.slug));
-  console.groupEnd();
-})();
-</script>
+      // About
+      function buildAbout(w) {
+        const p = document.createElement('p'); p.className = 'muted';
+        const text = "Camilo — JavaScript developer focused on clean UI and fast, practical shipping. Comfortable across HTML, CSS, JavaScript (ES6+), Git, npm, React, Node.js, Express, MongoDB, and RESTful APIs. I build sites like this and add the features clients actually need.";
+        w.append(p);
+        typeIn(p, text, 14);
+      }
+
+      // Links
+      function buildLinks(w) {
+        const list = document.createElement('ul'); list.className = 'links';
+        for (const { label, href } of LINKS) {
+          const li = document.createElement('li');
+          const a = document.createElement('a'); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
+          a.innerHTML = `<span>${label}</span><span class="ext">↗</span>`;
+          li.style.opacity = 0; li.append(a); list.append(li);
+        }
+        w.append(list);
+        // sequential reveal
+        (async () => { for (const li of list.children) { await sleep(120); li.style.opacity = 1; } })();
+      }
+
+      // Projects index grid
+      function buildProjects(w) {
+        const grid = document.createElement('div'); grid.className = 'grid';
+        for (const p of PROJECTS) {
+          const card = document.createElement('article'); card.className = 'card'; card.tabIndex = 0; card.setAttribute('data-slug', p.slug);
+          const h = document.createElement('h2'); h.textContent = p.title; card.append(h);
+          const d = document.createElement('p'); d.className = 'muted'; d.textContent = p.desc; card.append(d);
+          const tagrow = document.createElement('div'); tagrow.className = 'tagrow';
+          for (const t of (p.tags || [])) { const span = document.createElement('span'); span.className = 'tag'; span.textContent = t; tagrow.append(span); }
+          card.append(tagrow);
+          const actions = document.createElement('div'); actions.className = 'actions';
+          if (p.live) { actions.append(action('Live', p.live)); }
+          if (p.code) { actions.append(action('Code', p.code)); }
+          actions.append(button('Details', () => openProject(p.slug)));
+          card.append(actions);
+          card.addEventListener('click', e => { if (!(e.target instanceof HTMLAnchorElement)) openProject(p.slug); });
+          card.addEventListener('keypress', e => { if (e.key === 'Enter') openProject(p.slug); });
+          grid.append(card);
+        }
+        w.append(grid);
+      }
+
+      function action(label, href) { const a = document.createElement('a'); a.className = 'action'; a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = label; return a; }
+      function button(label, on) { const a = document.createElement('a'); a.href = '#'; a.className = 'action'; a.textContent = label; a.addEventListener('click', e => { e.preventDefault(); on(); }); return a; }
+
+      // Typing utils
+      function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+      async function typeReplace(el, text, speed = 90, pause = 700) {
+        el.textContent = ''; for (let i = 0; i < text.length; i++) { el.textContent += text[i]; await sleep(speed); }
+        await sleep(pause);
+        for (let i = text.length - 1; i >= 0; i--) { el.textContent = text.slice(0, i); await sleep(Math.max(20, speed / 2)); }
+        await sleep(120);
+      }
+      async function typeIn(el, text, speed = 14) {
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) { el.textContent = text; return; }
+        el.textContent = ''; for (let i = 0; i < text.length; i++) { el.textContent += text[i]; await sleep(speed); }
+      }
+
+      // Scroll progress
+      const observer = new IntersectionObserver(entries => {
+        const vis = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!vis) return; const idx = SECTIONS.findIndex(s => s.id === vis.target.id);
+        progress.style.width = ((idx + 1) / SECTIONS.length * 100) + '%';
+        if (idx > 0) hint.style.display = 'none';
+        // reflect in URL hash
+        history.replaceState(null, '', '#' + vis.target.id);
+      }, { root: scroller, threshold: [0, .25, .5, .75, 1] });
+
+      // observe sections
+      queueMicrotask(() => {
+        document.querySelectorAll('section.section').forEach(sec => observer.observe(sec));
+        // jump to hash at load
+        const target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView({ block: 'start' });
+      });
+
+      // Keyboard navigation
+      addEventListener('keydown', e => {
+        const k = e.key; if (['ArrowDown', 'PageDown'].includes(k)) { e.preventDefault(); page(1); }
+        if (['ArrowUp', 'PageUp'].includes(k)) { e.preventDefault(); page(-1); }
+        if (k === 'Home') { e.preventDefault(); scrollToSection(0); }
+        if (k === 'End') { e.preventDefault(); scrollToSection(SECTIONS.length - 1); }
+        if ((e.metaKey || e.ctrlKey) && k.toLowerCase() === 'k') { e.preventDefault(); openCmd(); }
+      }, { passive: false });
+
+      function currentIndex() {
+        const id = location.hash.slice(1) || SECTIONS[0].id;
+        return Math.max(0, SECTIONS.findIndex(s => s.id === id));
+      }
+      function sectionEl(i) { return document.getElementById(SECTIONS[i].id); }
+      function scrollToSection(i) { sectionEl(i)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      function page(delta) { let i = currentIndex() + delta; i = Math.max(0, Math.min(SECTIONS.length - 1, i)); scrollToSection(i); }
+
+      // Command palette
+      const commands = [];
+      function addCommand(label, run) { commands.push({ label, run }); }
+      // core commands
+      SECTIONS.forEach((s, i) => addCommand('Go: ' + (s.title || 'Hello'), () => scrollToSection(i)));
+      addCommand('Copy Email', () => navigator.clipboard.writeText('jgomezval@icloud.com'));
+      addCommand('Toggle Reduced Motion Class', () => document.documentElement.classList.toggle('no-motion'));
+      // project commands
+      PROJECTS.forEach(p => addCommand('Open project: ' + p.title, () => openProject(p.slug)));
+
+      function openCmd() { cmdk.showModal(); cmdInput.value = ''; renderCmd(''); cmdInput.focus(); }
+      function closeCmd() { cmdk.close(); document.body.focus(); }
+      function renderCmd(q) {
+        const ql = q.toLowerCase(); cmdList.innerHTML = '';
+        commands.filter(c => c.label.toLowerCase().includes(ql)).forEach(c => {
+          const b = document.createElement('button'); b.className = 'item'; b.textContent = c.label; b.onclick = () => { c.run(); closeCmd(); };
+          cmdList.append(b);
+        });
+      }
+      document.getElementById('openCmd').addEventListener('click', e => { e.preventDefault(); openCmd(); });
+      cmdk.addEventListener('cancel', e => { e.preventDefault(); closeCmd(); });
+      cmdk.addEventListener('click', e => { if (e.target === cmdk) closeCmd(); });
+      cmdInput.addEventListener('input', e => renderCmd(e.target.value));
+
+      // Project modal logic
+      const pm = document.getElementById('projectModal');
+      const pmClose = document.getElementById('pmClose');
+      const pmTitle = document.getElementById('pmTitle');
+      const pmDesc = document.getElementById('pmDesc');
+      const pmTags = document.getElementById('pmTags');
+      const pmActions = document.getElementById('pmActions');
+      const pmDemo = document.getElementById('pmDemo');
+
+      pmClose.addEventListener('click', () => pm.close());
+      pm.addEventListener('cancel', e => { e.preventDefault(); pm.close(); });
+
+      function openProject(slug) {
+        const p = PROJECTS.find(x => x.slug === slug); if (!p) return;
+        pmTitle.textContent = p.title;
+        pmDesc.textContent = p.desc;
+        pmTags.innerHTML = ''; for (const t of (p.tags || [])) { const s = document.createElement('span'); s.className = 'tag'; s.textContent = t; pmTags.append(s); }
+        pmActions.innerHTML = ''; if (p.live) pmActions.append(action('Live', p.live)); if (p.code) pmActions.append(action('Code', p.code));
+        pmDemo.innerHTML = '';
+        if (p.demo && p.demo !== 'none') mountDemo(pmDemo, p.demo);
+        pm.showModal();
+      }
+
+      function mountDemo(container, type) {
+        if (type === 'uploader') {
+          const box = document.createElement('div'); box.style.cssText = 'border:1px dashed var(--line); border-radius:12px; padding:16px; background:#0005;';
+          const title = document.createElement('div'); title.textContent = 'Demo: drag files here (simulated)';
+          const out = document.createElement('pre'); out.textContent = ''; out.style.whiteSpace = 'pre-wrap';
+          box.append(title, out); container.append(box);
+          box.addEventListener('dragover', e => { e.preventDefault(); box.style.background = '#111'; });
+          box.addEventListener('dragleave', () => { box.style.background = '#0005'; });
+          box.addEventListener('drop', e => {
+            e.preventDefault(); const files = [...e.dataTransfer.files].map(f => ({ name: f.name, size: f.size }));
+            out.textContent = 'Queued files (mocked):\n' + JSON.stringify(files, null, 2) + '\n\nWould request presigned URLs and stream via fetch().';
+            box.style.background = '#0005';
+          });
+        }
+      }
+
+      // Download self as single file (for the homage)
+      document.getElementById('downloadSrc').addEventListener('click', e => {
+        e.preventDefault();
+        const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+        const blob = new Blob([html], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = 'camilo-portfolio.html'; a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Hash navigation on load for direct links
+      addEventListener('hashchange', () => {
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // Devtools hello
+      console.groupCollapsed('%cportfolio init', 'font-weight:600;color:#9ef');
+      log('sections', SECTIONS.map(s => s.id));
+      log('projects', PROJECTS.map(p => p.slug));
+      console.groupEnd();
+    })();
+  </script>
 </body>
+
 </html>
