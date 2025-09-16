@@ -1,3 +1,7 @@
+User-agent: Mediapartners-Google
+Allow: /
+
 User-agent: *
 Allow: /
-Sitemap: https://www.https://camilo777.com/sitemap.xml
+
+Sitemap: https://camilo777.com/sitemap.xml
