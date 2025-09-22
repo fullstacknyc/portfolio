@@ -147,7 +147,7 @@ export default function MyApp() {
   // devOps
   const { Vercel, Git, CI_CD } = fullStackSkills.devOps;
   
-  return <div>Full stack Next.js & TypeScript development at your fingertips!</div>;
+  return <div>Full stack Next.js & TypeScript development at your fingertips!</div>;n 
 }`}
         </pre>
       </div>
