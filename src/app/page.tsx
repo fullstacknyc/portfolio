@@ -135,11 +135,19 @@ export default function HomePage() {
             borderRadius: 8,
           }}
         >
-          {`// Example: fetch leads
-export async function getLeads() {
-  const res = await fetch('/api/leads');
-  if (!res.ok) throw new Error('Failed to load');
-  return res.json();
+          {`import { fullStackSkills} from 'my-skills';
+          
+export default function MyApp() {
+  // front-end
+  const { React, NextJS, TypeScript, HTML, CSS } = fullStackSkills.frontend;
+  
+  // back-end
+  const { NodeJS, Databases, APIs } = fullStackSkills.backend;
+  
+  // devOps
+  const { Vercel, Git, CI_CD } = fullStackSkills.devOps;
+  
+  return <div>Full stack Next.js & TypeScript development at your fingertips!</div>;
 }`}
         </pre>
       </div>
