@@ -60,7 +60,10 @@ export default function HomePage() {
   return (
     <section>
       <header>
-        <h1 className="h1">Next.js development at your fingertips.</h1>
+        <h1 className="h1">
+          Next.js development at your fingertips —{" "}
+          <Typewriter words={["fast", "reliable", "accessible"]} />
+        </h1>
         <p className="h2">
           Create full stack React apps with Next.js — production-ready, fast, and
           accessible.
