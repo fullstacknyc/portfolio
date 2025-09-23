@@ -9,7 +9,7 @@ export default function ContactPage() {
       </header>
 
       <article className="card" style={{ marginTop: 16 }}>
-        <p className="small">Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p className="small">Email: <a href="mailto:jgomezval@icloud.com">jgomezval@icloud.com</a></p>
         <p className="small" style={{ marginTop: 8 }}>
           Or use a scheduling / contact form (add one here when ready).
         </p>

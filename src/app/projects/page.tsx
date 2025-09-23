@@ -10,16 +10,16 @@ export default function ProjectsPage() {
 
       <div style={{ display: "grid", gap: 16, marginTop: 20 }}>
         <article className="card">
-          <h3 className="title">Example Project</h3>
-          <p className="desc">A short description of the project and impact.</p>
+          <h3 className="title">AudioCloud</h3>
+          <p className="desc">Using Next.js, I collaborated with a senior JavaScript engineer and a music production engineer to create a file transfer app for clients of the business.</p>
           <div style={{ marginTop: 12 }}>
-            <Link href="/projects/example" className="btn btn--neon">View case study</Link>
+            <Link href="https://www.fullstacknyc.com/fullstacknyc/portfolio.git" className="btn btn--neon">View case study</Link>
           </div>
         </article>
 
         <article className="card">
-          <h3 className="title">Another Project</h3>
-          <p className="desc">Summary, tech used and outcomes.</p>
+          <h3 className="title">Alexandra Valencia</h3>
+          <p className="desc">Using Next.js, I created a new website created to retain customers and boost sales by upgrading the framework, and design.</p>
         </article>
       </div>
 
