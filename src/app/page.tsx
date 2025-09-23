@@ -49,9 +49,7 @@ function Typewriter({
   return (
     <span aria-hidden="false">
       {text}
-      <span className="cursor" aria-hidden>
-        ▍
-      </span>
+      <span aria-hidden>▍</span>
     </span>
   );
 }
@@ -60,73 +58,52 @@ export default function HomePage() {
   return (
     <section>
       <header>
-        <h1 className="h1">
+        <h1>
           Next.js development at your fingertips —{" "}
           <Typewriter words={["fast", "reliable", "accessible"]} />
         </h1>
-        <p className="h2">
+        <p>
           Create full stack React apps with Next.js — production-ready, fast, and
           accessible.
         </p>
       </header>
 
-      <div className="grid-2" style={{ margin: "1.25rem 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", margin: "1.25rem 0" }}>
         <div>
-          <article className="card" style={{ position: "relative" }}>
-            <h3
-              className="title"
-              style={{
-                margin: 0,
-                fontSize: "1.125rem",
-                fontWeight: 700,
-              }}
-            >
+          <article style={{ position: "relative", border: "1px solid #ddd", borderRadius: 8, padding: 16 }}>
+            <h3 style={{ margin: 0, fontSize: "1.125rem", fontWeight: 700 }}>
               Custom web applications that grow your business
             </h3>
 
-            <p
-              className="desc"
-              style={{ marginTop: 8, color: "var(--muted)" }}
-            >
-              Full‑stack Next.js & TypeScript solutions focused on conversion,
+            <p style={{ marginTop: 8 }}>
+              Full-stack Next.js & TypeScript solutions focused on conversion,
               reliability, and maintainability.
             </p>
 
-            <ul
-              style={{
-                marginTop: ".75rem",
-                paddingLeft: "1.25rem",
-                color: "var(--muted)",
-              }}
-            >
-              <li>Pixel‑perfect marketing sites & e‑commerce</li>
+            <ul style={{ marginTop: ".75rem", paddingLeft: "1.25rem" }}>
+              <li>Pixel-perfect marketing sites & e-commerce</li>
               <li>Admin dashboards, integrations, and automation</li>
               <li>SEO, performance tuning, and analytics</li>
             </ul>
 
             <div style={{ marginTop: ".75rem" }}>
-              <strong className="small">Tech stack:</strong>
-              <div className="row" style={{ marginTop: ".5rem" }}>
-                <span className="kbd">Next.js</span>
-                <span className="kbd">React</span>
-                <span className="kbd">TypeScript</span>
-                <span className="kbd">APIs</span>
+              <strong>Tech stack:</strong>
+              <div style={{ marginTop: ".5rem", display: "flex", gap: ".5rem" }}>
+                <span>Next.js</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>APIs</span>
               </div>
             </div>
 
             <div style={{ marginTop: 16, display: "flex", gap: 12 }}>
-              <Link href="/projects" className="btn btn--neon">
-                View Work
-              </Link>
-              <Link href="/contact" className="btn">
-                Book Consultation
-              </Link>
+              <Link href="/projects">View Work</Link>
+              <Link href="/contact">Book Consultation</Link>
             </div>
           </article>
         </div>
 
         <pre
-          className="card"
           style={{
             margin: 0,
             background: "#071023",
@@ -147,23 +124,17 @@ export default function MyApp() {
   // devOps
   const { Vercel, Git, CI_CD } = fullStackSkills.devOps;
   
-  return <div>Full stack Next.js & TypeScript development at your fingertips!</div>;n 
+  return <div>Full stack Next.js & TypeScript development at your fingertips!</div>;
 }`}
         </pre>
       </div>
 
       <section style={{ marginTop: 18 }}>
-        <article className="card" style={{ padding: 16 }}>
-          <h4
-            style={{
-              margin: 0,
-              fontSize: "1rem",
-              fontWeight: 700,
-            }}
-          >
+        <article style={{ padding: 16, border: "1px solid #ddd", borderRadius: 8 }}>
+          <h4 style={{ margin: 0, fontSize: "1rem", fontWeight: 700 }}>
             What I solve
           </h4>
-          <p style={{ marginTop: 8, color: "var(--muted)" }}>
+          <p style={{ marginTop: 8 }}>
             I build and ship production web apps that are fast, secure, and easy
             to maintain. Below is a quick summary of how I approach projects:
           </p>
@@ -177,41 +148,41 @@ export default function MyApp() {
             }}
           >
             <div
-              className="card"
               style={{
                 padding: 12,
                 borderRadius: 10,
+                border: "1px solid #ddd",
                 minWidth: 180,
               }}
             >
               <strong>Discovery</strong>
-              <div className="small" style={{ marginTop: 6 }}>
+              <div style={{ marginTop: 6 }}>
                 Clear milestones, pricing, and delivery plan.
               </div>
             </div>
             <div
-              className="card"
               style={{
                 padding: 12,
                 borderRadius: 10,
+                border: "1px solid #ddd",
                 minWidth: 180,
               }}
             >
               <strong>Build</strong>
-              <div className="small" style={{ marginTop: 6 }}>
+              <div style={{ marginTop: 6 }}>
                 Accessible, tested components and fast pages.
               </div>
             </div>
             <div
-              className="card"
               style={{
                 padding: 12,
                 borderRadius: 10,
+                border: "1px solid #ddd",
                 minWidth: 180,
               }}
             >
               <strong>Ship</strong>
-              <div className="small" style={{ marginTop: 6 }}>
+              <div style={{ marginTop: 6 }}>
                 Monitoring, performance, and SEO optimizations.
               </div>
             </div>
@@ -219,15 +190,13 @@ export default function MyApp() {
         </article>
       </section>
 
-      <p className="small" style={{ marginTop: 12, color: "var(--muted)" }}>
-        Book a free 30‑minute consultation — a clear roadmap, milestone pricing,
+      <p style={{ marginTop: 12 }}>
+        Book a free 30-minute consultation — a clear roadmap, milestone pricing,
         and a timeline so you know exactly how your site will deliver results.
       </p>
 
       <div style={{ marginTop: 12 }}>
-        <Link href="/contact" className="btn btn--neon">
-          Contact Us
-        </Link>
+        <Link href="/contact">Contact Us</Link>
       </div>
     </section>
   );
