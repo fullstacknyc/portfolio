@@ -20,6 +20,7 @@ export default function ProjectsPage() {
         <article className="card">
           <h3 className="title">Alexandra Valencia</h3>
           <p className="desc">Using Next.js, I created a new website created to retain customers and boost sales by upgrading the framework, and design.</p>
+          <Link href="https://www.alexandravalencia.com" className="btn btn--neon" style={{ marginTop: 12 }}>Visit site</Link>
         </article>
       </div>
 
