@@ -1,3 +1,4 @@
+// app/page.tsx
 "use client";
 
 import Link from "next/link";
@@ -54,25 +55,62 @@ function Typewriter({
   );
 }
 
-/* Portfolio Component */
+/* Portfolio Page */
 export default function Portfolio() {
   return (
     <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
       {/* Hero */}
       <section className="h-screen flex flex-col justify-center items-center snap-start bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-6 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight gradient-text">
           <Typewriter
-            words={["Front-end Development", "Back-End Development", "Fullstack Applications", "Next.js & TypeScript", "Web Performance", "SEO Optimization", "Responsive Design", "UI/UX Design", "E-Commerce Solutions", "API Integration", "Database Management", "Cloud Deployment", "Continuous Integration", "Version Control with Git", "Agile Methodologies", "Project Management", "Team Collaboration", "Problem Solving", "Creative Solutions", "User-Centered Design", "Web Accessibility", "Performance Optimization", "Scalable Architecture", "Modern Web Technologies", "Progressive Web Apps", "Mobile-First Design", "Cross-Browser Compatibility", "Code Reviews", "Testing & Debugging", "Open Source Contribution", "Tech Blogging", "Community Engagement", "Learning & Development"]}
+            words={[
+              "Front-End Development",
+              "Back-End Development",
+              "Fullstack Applications",
+              "Next.js & TypeScript",
+              "Web Performance",
+              "SEO Optimization",
+              "Responsive Design",
+              "UI/UX Design",
+              "E-Commerce Solutions",
+              "API Integration",
+              "Database Management",
+              "Cloud Deployment",
+              "Continuous Integration",
+              "Version Control with Git",
+              "Agile Methodologies",
+              "Project Management",
+              "Team Collaboration",
+              "Problem Solving",
+              "Creative Solutions",
+              "User-Centered Design",
+              "Web Accessibility",
+              "Performance Optimization",
+              "Scalable Architecture",
+              "Modern Web Technologies",
+              "Progressive Web Apps",
+              "Mobile-First Design",
+              "Cross-Browser Compatibility",
+              "Code Reviews",
+              "Testing & Debugging",
+              "Open Source Contribution",
+              "Tech Blogging",
+              "Community Engagement",
+              "Learning & Development",
+            ]}
           />
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
-          I am a full-stack developer specializing in the Next.js framework with Tailwind and AWS services.
+          I am a full-stack developer specializing in Next.js, Tailwind, and AWS
+          services.
         </p>
       </section>
 
       {/* Skills */}
       <section className="h-screen flex flex-col justify-center items-center snap-start bg-white text-gray-800 px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12">Skills</h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 gradient-text">
+          Skills
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl">
           {[
             "React",
@@ -88,7 +126,7 @@ export default function Portfolio() {
           ].map((skill, i) => (
             <div
               key={i}
-              className="p-6 bg-gray-100 rounded-lg shadow hover:shadow-xl hover:scale-105 transition"
+              className="p-6 card hover:shadow-lg hover:scale-105 transition"
             >
               <p className="text-lg font-medium text-center">{skill}</p>
             </div>
@@ -98,33 +136,32 @@ export default function Portfolio() {
 
       {/* Services */}
       <section className="h-screen flex flex-col justify-center items-center snap-start bg-gray-50 px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 gradient-text">
           Shop
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl">
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-xl hover:translate-y-[-5px] transition">
+          <div className="p-6 card hover:translate-y-[-5px] transition">
             <h3 className="text-2xl font-semibold mb-3">Custom Websites</h3>
             <p className="text-gray-600">
               Pixel-perfect, responsive, and SEO-friendly websites built with
               Next.js and TypeScript.
             </p>
           </div>
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-xl hover:translate-y-[-5px] transition">
+          <div className="p-6 card hover:translate-y-[-5px] transition">
             <h3 className="text-2xl font-semibold mb-3">
               Dashboards & Automation
             </h3>
             <p className="text-gray-600">
-              Admin panels, data dashboards, and API integrations to streamline
+              Admin panels, dashboards, and API integrations to streamline
               workflows.
             </p>
           </div>
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-xl hover:translate-y-[-5px] transition">
+          <div className="p-6 card hover:translate-y-[-5px] transition">
             <h3 className="text-2xl font-semibold mb-3">
               E-Commerce & Growth
             </h3>
             <p className="text-gray-600">
-              Conversion-focused e-commerce stores with performance and
-              analytics built-in.
+              Conversion-focused e-commerce stores with analytics built-in.
             </p>
           </div>
         </div>
@@ -135,28 +172,34 @@ export default function Portfolio() {
         id="projects"
         className="h-screen flex flex-col justify-center items-center snap-start bg-gray-900 text-white px-6"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12">Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 gradient-text">
+          Projects
+        </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl">
-          <div className="p-6 bg-gray-800 rounded-lg shadow hover:shadow-xl transition">
+          <div className="p-6 card bg-gray-800 hover:shadow-lg transition">
             <h3 className="text-2xl font-semibold mb-3">Portfolio Website</h3>
             <p className="text-gray-300 mb-4">
               Personal portfolio built with Next.js, TypeScript, and Tailwind.
             </p>
             <a
-              href="#"
+              href="https://camilo777.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-pink-400 hover:underline font-medium"
             >
               View Demo
             </a>
           </div>
-          <div className="p-6 bg-gray-800 rounded-lg shadow hover:shadow-xl transition">
+          <div className="p-6 card bg-gray-800 hover:shadow-lg transition">
             <h3 className="text-2xl font-semibold mb-3">E-Commerce App</h3>
             <p className="text-gray-300 mb-4">
               Next.js e-commerce platform with Stripe payments and product
               management.
             </p>
             <a
-              href="#"
+              href="https://github.com/fullstacknyc"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-pink-400 hover:underline font-medium"
             >
               View Demo
@@ -176,10 +219,7 @@ export default function Portfolio() {
         <p className="mb-8 text-lg max-w-xl">
           Book a free consultation and get a clear plan for your website or app.
         </p>
-        <Link
-          href="mailto:jgomezval@icloud.com"
-          className="px-6 py-3 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition font-semibold"
-        >
+        <Link href="mailto:jgomezval@icloud.com" className="btn btn-primary">
           Contact Me
         </Link>
       </section>

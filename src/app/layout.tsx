@@ -1,11 +1,29 @@
 // app/layout.tsx
-import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Next.js App",
-  description: "Learning Next.js like HTML, CSS, and JS",
+  title: "Camilo | Full-Stack Developer",
+  description:
+    "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, and AWS.",
+  keywords: [
+    "Full-Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind",
+    "Web Development",
+    "Portfolio",
+  ],
+  authors: [{ name: "Camilo" }],
+  creator: "Camilo",
+  openGraph: {
+    title: "Camilo | Full-Stack Developer",
+    description:
+      "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, and AWS.",
+    type: "website",
+    url: "https://camilo777.com",
+  },
 };
 
 export default function RootLayout({
@@ -15,39 +33,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <a className="skip-link" href="#content">
-          Skip to content
-        </a>
-
-        {/* decorative animated background */}
-        <div className="dazzle-canvas" aria-hidden />
-
-        <header className="container" style={{ paddingTop: 20 }}>
-          <div className="row" style={{ justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <Link href="/" className="brand" aria-label="Home">
-                <h1 className="h1" style={{ margin: 0, fontSize: "1.125rem" }}>My Next.js App</h1>
-              </Link>
-              <p className="small" style={{ margin: 0 }}>Full‑stack Next.js & TypeScript</p>
-            </div>
-
-            <nav aria-label="Main navigation" className="row">
-              <Link href="/" className="btn">Home</Link>
-              <Link href="/projects" className="btn">Projects</Link>
-              <Link href="/contact" className="btn btn--neon">Contact</Link>
-            </nav>
-          </div>
-        </header>
-
-        <main id="content" className="container" role="main" style={{ paddingTop: 8 }}>
-          {children}
-        </main>
-
-        <footer className="container" style={{ marginTop: 24 }}>
-          <div className="divider" />
-          <p className="small">© {new Date().getFullYear()} — Built with Next.js</p>
-        </footer>
+      <body className="bg-white text-gray-900 antialiased">
+        {children}
       </body>
     </html>
   );
