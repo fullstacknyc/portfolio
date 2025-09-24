@@ -61,30 +61,13 @@ export default function Portfolio() {
       {/* Hero */}
       <section className="h-screen flex flex-col justify-center items-center snap-start bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-6 text-center">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Camilo — Full Stack Developer
-          <br />
           <Typewriter
-            words={["Web Apps", "APIs", "Dashboards", "E-Commerce"]}
+            words={["Front-end Development", "Back-End Development", "Fullstack Applications", "Next.js & TypeScript", "Web Performance", "SEO Optimization", "Responsive Design", "UI/UX Design", "E-Commerce Solutions", "API Integration", "Database Management", "Cloud Deployment", "Continuous Integration", "Version Control with Git", "Agile Methodologies", "Project Management", "Team Collaboration", "Problem Solving", "Creative Solutions", "User-Centered Design", "Web Accessibility", "Performance Optimization", "Scalable Architecture", "Modern Web Technologies", "Progressive Web Apps", "Mobile-First Design", "Cross-Browser Compatibility", "Code Reviews", "Testing & Debugging", "Open Source Contribution", "Tech Blogging", "Community Engagement", "Learning & Development"]}
           />
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
-          I build high-performance, scalable, and modern websites with React,
-          Next.js, TypeScript, and full-stack tools.
+          I am a full-stack developer specializing in the Next.js framework with Tailwind and AWS services.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="#projects"
-            className="px-6 py-3 bg-pink-500 rounded-lg shadow-lg hover:bg-pink-600 transition font-semibold"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition font-semibold"
-          >
-            Contact Me
-          </Link>
-        </div>
       </section>
 
       {/* Skills */}
@@ -95,11 +78,13 @@ export default function Portfolio() {
             "React",
             "Next.js",
             "TypeScript",
+            "JavaScript",
             "Node.js",
-            "Databases",
-            "APIs & Integrations",
-            "Tailwind CSS",
-            "Git & Deployment",
+            "Express",
+            "MongoDB",
+            "PostgreSQL",
+            "GraphQL",
+            "REST APIs",
           ].map((skill, i) => (
             <div
               key={i}
@@ -114,7 +99,7 @@ export default function Portfolio() {
       {/* Services */}
       <section className="h-screen flex flex-col justify-center items-center snap-start bg-gray-50 px-6">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-12">
-          What I Offer
+          Shop
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl">
           <div className="p-6 bg-white rounded-lg shadow hover:shadow-xl hover:translate-y-[-5px] transition">
@@ -192,7 +177,7 @@ export default function Portfolio() {
           Book a free consultation and get a clear plan for your website or app.
         </p>
         <Link
-          href="mailto:your@email.com"
+          href="mailto:jgomezval@icloud.com"
           className="px-6 py-3 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition font-semibold"
         >
           Contact Me
