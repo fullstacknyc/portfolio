@@ -11,14 +11,6 @@ export default function Hero() {
         <p className="text-lg mt-4">
           This portfolio displays projects specializing in Next.js, TypeScript, Tailwind and AWS.
         </p>
-        <div className="mt-6 flex justify-center gap-4">
-          <a href="#projects" className="btn btn-primary">
-            View Projects
-          </a>
-          <a href="#contact" className="btn btn-outline">
-            Contact
-          </a>
-        </div>
       </div>
     </section>
   );
