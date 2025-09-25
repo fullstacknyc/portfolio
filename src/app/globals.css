@@ -1,158 +1,179 @@
-/* globals.css — Modern portfolio theme with Tailwind integration */
+/* globals.css - modern, cutting-edge CSS */
 
-/* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Layered cascade for predictable overrides */
+@layer reset, base, components, utilities;
 
-/* CSS Variables */
-:root {
-  --bg-1: #ffffff;
-  --bg-2: #f9fafb;
-  --bg-3: #f3f4f6;
-
-  --text: #111827;      /* Primary ink */
-  --muted: #6b7280;     /* Secondary */
-  --accent: #2563eb;    /* Tailwind blue-600 */
-  --accent-2: #ec4899;  /* Tailwind pink-500 */
-  --border: #e5e7eb;
-
-  --radius: 12px;
-  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-
-  --max-width: 1200px;
-  --content-gap: 1.5rem;
-}
-
-/* Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg-1);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 0.6rem 0;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-
-h1 {
-  font-size: clamp(2.25rem, 5vw, 3rem);
-  line-height: 1.15;
-}
-
-h2 {
-  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  line-height: 1.25;
-}
-
-h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  line-height: 1.3;
-}
-
-p {
-  margin: 0 0 1rem 0;
-  color: var(--muted);
-  max-width: 70ch;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #fff;
-  box-shadow: var(--shadow);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.btn-outline {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* Cards */
-.card {
-  background: var(--bg-1);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
-.card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-
-/* Utility */
-.text-center {
-  text-align: center;
-}
-
-.lead {
-  font-size: 1.125rem;
-  color: var(--muted);
-}
-
-.hr {
-  height: 1px;
-  background: var(--border);
-  border: none;
-  margin: 2rem 0;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
+/* 1) Reset / sensible defaults */
+@layer reset {
+  :where(html, body, #__next, #root) { height: 100%; }
+  :where(*, *::before, *::after) { box-sizing: border-box; }
+  :where(html) {
+    line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light dark;
   }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; border: 0; background: none; }
+}
+
+/* 2) Design tokens & theme variables (supports container queries, color-mix, etc.) */
+@layer base {
+  :root {
+    /* Base colors (use lab / color-mix progressively) */
+    --bg:  color-mix(in srgb, #0f172a 10%, #0b1220 90%);
+    --surface: color-mix(in srgb, #0b1220 85%, #0f172a 15%);
+    --text: #e6eef8;
+    --muted: color-mix(in srgb, var(--text) 65%, #000 35%);
+    --accent: #7c3aed;        /* purple-600 */
+    --accent-2: #06b6d4;      /* teal-400 */
+    --glass-alpha: 0.18;
+    --radius: 12px;
+    --container-max: 1100px;
+
+    /* Fluid typography scale */
+    --fs-1: clamp(1rem, 0.9rem + 1.2vw, 1.125rem);
+    --fs-2: clamp(1.125rem, 1rem + 1.6vw, 1.25rem);
+    --fs-3: clamp(1.375rem, 1.1rem + 2.8vw, 2rem);
+    --fs-4: clamp(2rem, 1.6rem + 4.5vw, 3.75rem);
+
+    /* Motion */
+    --motion: 240ms;
+    --easing: cubic-bezier(.2,.9,.3,1);
+  }
+
+  /* Dark/light theme override via [data-theme] on root if needed */
+  :root[data-theme="light"] {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #0b1220;
+    --muted: color-mix(in srgb, var(--text) 60%, #fff 40%);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 10%),
+                linear-gradient(180deg, color-mix(in srgb, var(--bg) 92%, #000 8%), var(--bg));
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--motion) var(--easing), color var(--motion) var(--easing);
+    padding: clamp(1rem, 2vw, 2rem);
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  /* Fluid headings */
+  h1 { font-weight: 700; font-size: var(--fs-4); margin: 0 0 .5rem 0; }
+  h2 { font-weight: 700; font-size: var(--fs-3); margin: 0 0 .5rem 0; }
+  p  { font-size: var(--fs-1); margin: 0 0 1rem 0; color: var(--muted); }
+}
+
+/* 3) Components showing modern features: container queries, aspect-ratio, backdrop-filter */
+@layer components {
+  /* layout container for component queries */
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    container-type: inline-size; /* enables container queries */
+    container-name: app-container;
+    padding: clamp(.5rem, 1.5vw, 1.5rem);
+  }
+
+  /* Card with responsive layout via container queries */
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, #000 8%), var(--surface));
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px color-mix(in srgb, #000 40%, transparent);
+    transition: transform var(--motion) var(--easing), box-shadow var(--motion) var(--easing);
+    align-items: center;
+  }
+
+  /* When the container is wider switch to two-column layout */
+  @container app-container (min-width: 56rem) {
+    .card { grid-template-columns: 1fr 320px; }
+  }
+
+  /* Glass surface */
+  .glass {
+    background: color-mix(in srgb, var(--surface) var(--glass-alpha), transparent);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid color-mix(in srgb, var(--surface) 55%, #000 45%);
+    border-radius: calc(var(--radius) - 2px);
+    padding: 1rem;
+  }
+
+  /* Buttons using accent color and modern focus styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem .9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, var(--accent), var(--accent-2));
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 18%, #000 82%);
+    transition: transform var(--motion) var(--easing), box-shadow var(--motion) var(--easing);
+  }
+  .btn:active { transform: translateY(1px) scale(.998); }
+  .btn:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--accent) 24%, transparent);
+    outline-offset: 3px;
+  }
+
+  /* Accent for form controls */
+  input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+  input, textarea, select {
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--muted) 14%, transparent);
+    color: var(--text);
+    padding: .5rem .75rem;
+    border-radius: 8px;
+  }
+}
+
+/* 4) Utilities and progressive fallbacks */
+@layer utilities {
+  /* modern gradient text with fallback */
+  .gradient-text {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  /* fallback if background-clip text isn't supported */
+  @supports (color: color-mix(in srgb, white 10%, black 90%)) and (not (-webkit-background-clip: text)) {
+    .gradient-text { color: var(--accent); background: none; -webkit-text-fill-color: unset; }
+  }
+
+  /* aspect ratio utility */
+  .ratio-16-9 { aspect-ratio: 16 / 9; width: 100%; display: block; overflow: hidden; border-radius: 8px; }
+
+  /* reduced motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    :root { --motion: 0ms; }
+    * { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; }
+  }
+
+  /* prefers-color-scheme */
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+  }
+
+  /* utilities for layout helpers */
+  .stack { display: flex; flex-direction: column; gap: .75rem; }
+  .row { display: flex; gap: .75rem; align-items: center; }
+  .center { display: grid; place-items: center; }
 }
