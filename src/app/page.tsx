@@ -12,7 +12,7 @@ export default function Portfolio() {
       <Hero />
       <Skills />
       <Shop />
-      <Blog />
+      <Changelog />
       <Contact />
     </main>
   );
