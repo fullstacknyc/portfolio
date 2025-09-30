@@ -34,7 +34,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white text-gray-900 antialiased">
-        {children}
+        <div className="navBar">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Resumé</a></li>
+          </ul>
+        </div>
       </body>
     </html>
   );
