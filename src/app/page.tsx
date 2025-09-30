@@ -3,7 +3,7 @@
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Shop from "./components/Shop";
-import Blog from "./components/Blog";
+import Changelog from "./components/Changelog";
 import Contact from "./components/Contact";
 
 export default function Portfolio() {
