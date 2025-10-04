@@ -26,6 +26,21 @@ export const metadata: Metadata = {
   },
 };
 
+function Navbar() {
+  return (
+    <nav>
+      
+    </nav>
+  )
+}
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; 2024 Camilo. All rights reserved.</p>
+    </footer>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -33,16 +48,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900 antialiased">
-        <div className="navBar">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="./about">About</a></li>
-            <li><a href="./Contact">Contact</a></li>
-            <li><a href="./Projects">Projects</a></li>
-            <li><a href="./Resume">Resumé</a></li>
-          </ul>
-        </div>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,19 +1,9 @@
-// src/app/page.tsx
 "use client";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Shop from "./components/Shop";
-import Changelog from "./components/Changelog";
-import Contact from "./components/Contact";
 
 export default function Portfolio() {
   return (
-    <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      <Hero />
-      <Skills />
-      <Shop />
-      <Changelog />
-      <Contact />
+    <main>
+      <p>This is my portfolio. It is made using React.js, Tailwind.css, Next.js, Git, Vercel, NPM, Node.js, and more.</p>
     </main>
   );
 }
