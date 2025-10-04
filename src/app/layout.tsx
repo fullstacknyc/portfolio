@@ -29,7 +29,12 @@ export const metadata: Metadata = {
 function Navbar() {
   return (
     <nav>
-      
+      <img src="/vercel.svg" alt="Camilo's Logo" className="logo"/>
+      <ul>
+        <li><a>About</a></li>
+        <li><a>Projects</a></li>
+        <li><a>Contact</a></li>
+      </ul>
     </nav>
   )
 }
