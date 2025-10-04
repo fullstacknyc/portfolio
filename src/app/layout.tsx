@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Camilo | Full-Stack Developer",
+  title: "Camilo | Next.js Portfolio",
   description:
-    "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, and AWS.",
+    "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, AWS, Linux, and Kubernetes.",
   keywords: [
     "Full-Stack Developer",
     "Next.js",
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Camilo" }],
   creator: "Camilo",
   openGraph: {
-    title: "Camilo | Full-Stack Developer",
+    title: "Camilo | Next.js Portfolio",
     description:
-      "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, and AWS.",
+      "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, AWS, Linux, and Kubernetes.",
     type: "website",
     url: "https://camilo777.com",
   },
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 function Navbar() {
   return (
     <nav>
-      <img src="/vercel.svg" alt="Camilo's Logo" className="logo"/>
+      <img src="/next.svg" alt="Logo" className="logo"/>
       <ul>
         <li><a>About</a></li>
-        <li><a>Projects</a></li>
         <li><a>Contact</a></li>
+        <li><a>Projects</a></li>
       </ul>
     </nav>
   )
@@ -41,7 +41,7 @@ function Navbar() {
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2024 Camilo. All rights reserved.</p>
+      <p>&copy; 2025 fullstacknyc. All rights reserved.</p>
     </footer>
   );
 }

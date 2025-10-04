@@ -1,9 +1,10 @@
 "use client";
 
-export default function Portfolio() {
+export default function Home() {
   return (
     <main>
-      <p>This is my portfolio. It is made using React.js, Tailwind.css, Next.js, Git, Vercel, NPM, Node.js, and more.</p>
+      <h1>Welcome to My Portfolio</h1>
+      <p>This is the home page of my Next.js portfolio.</p>
     </main>
   );
 }
