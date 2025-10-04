@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 function Navbar() {
   return (
     <nav>
-      <img src="/next.svg" alt="Logo" className="logo"/>
+      <a href="https://www.camilo777.com" target="_blank"><img src="/logo.png" alt="Logo" className="logo"/></a>
       <ul>
         <li><a>About</a></li>
         <li><a>Contact</a></li>
@@ -41,7 +41,7 @@ function Navbar() {
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2025 fullstacknyc. All rights reserved.</p>
+      <p>&copy; 2025 Camilo Gomez. All rights reserved.</p>
     </footer>
   );
 }

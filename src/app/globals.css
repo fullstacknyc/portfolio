@@ -12,14 +12,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: white;
   border-radius: 15px;
   margin: 15px;
 }
 nav img {
   height: 50px;
-  width: 50px;
-  border-radius: 50%;
+  width: 200px;
+  border-radius: 15px;
 }
 nav ul {
   list-style: none;
@@ -27,19 +26,36 @@ nav ul {
   gap: 1.5rem;
 }
 nav ul li a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  padding: 15px;
 }
 nav ul li a:hover {
-  color: red;
+  color: black;
   cursor: pointer;
+  background-color: white;
+  padding: 15px;
 }
 main {
   color: white;
   border-radius: 15px;
   margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+main div {
+  padding: 15px;
+  background-color: white;
+  color: black;
+  width: min-content;
+  border-radius: 15px;
+  margin: 20px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
 }
 
 footer {
