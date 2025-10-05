@@ -60,8 +60,12 @@ main div {
   font-size: 2rem;
   font-weight: bold;
   background-color: whitesmoke;
-  margin: 25rem;
+  margin: 200px;
   padding: 25px;
+}
+main div:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 footer {
   display: flex;
