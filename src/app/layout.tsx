@@ -27,15 +27,23 @@ export const metadata: Metadata = {
 };
 
 function Navbar() {
-  return (
-    <nav>
-      <a href="https://www.camilo777.com" target="_blank"><img src="/logo.png" alt="Logo" className="logo"/></a>
-      <ul>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
-        <li><a>Projects</a></li>
-      </ul>
-    </nav>
+  return (<>
+    <header className="logoAndNav">
+  <div className="navLogo">
+    <a href="https://www.camilo777.com" target="_blank">
+      <img src="/logo.png" alt="Logo" />
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a>About</a></li>
+      <li><a>Contact</a></li>
+      <li><a>Projects</a></li>
+    </ul>
+  </nav>
+</header>
+
+    </>
   )
 }
 function Footer() {
@@ -54,7 +62,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="logoAndNav">
         <Navbar />
+        </div>
         {children}
         <Footer />
       </body>

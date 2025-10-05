@@ -3,25 +3,25 @@
 
 import { useState, useEffect } from "react";
 
-type SkillRotatorProps = {
-  skills: string[];
+type ProjectRotatorProps = {
+  projects: string[];
   interval?: number; // optional, defaults to 3000ms
 };
 
-export default function SkillRotator({ skills, interval = 3000 }: SkillRotatorProps) {
+export default function ProjectRotator({ projects, interval = 3000 }: ProjectRotatorProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % skills.length);
+      setIndex((prev) => (prev + 1) % projects.length);
     }, interval);
 
     return () => clearInterval(timer); // cleanup on unmount
-  }, [skills, interval]);
+  }, [projects, interval]);
 
   return (
     <div>
-      {skills[index]}
+      {projects[index]}
     </div>
   );
 }
