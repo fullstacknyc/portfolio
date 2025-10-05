@@ -81,10 +81,9 @@ footer {
   display: flex;
   text-align: center;
   padding: 1rem;
-  color: white;
+  color: black;
   font-weight: bold;
   margin: 15px;
   border-radius: 45px;
-  border: white solid 2px;
   width: 300px;
 }
