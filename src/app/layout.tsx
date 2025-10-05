@@ -26,13 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-function Navbar() {
+function Header() {
   return (<>
     <header className="logoAndNav">
   <div className="navLogo">
-    <a href="https://www.camilo777.com" target="_blank">
-      <img src="/logo.png" alt="Logo" />
-    </a>
+    <p>Camilo Gomez</p>
   </div>
   <nav>
     <ul>
@@ -63,7 +61,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="logoAndNav">
-        <Navbar />
+        <Header />
         </div>
         {children}
         <Footer />

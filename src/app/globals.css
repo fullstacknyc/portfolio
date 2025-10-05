@@ -24,10 +24,20 @@ nav {
   width: 100%;
 }
 
-.navLogo a img{
-  height: 50px;
-  width: 200px;
-  border-radius: 15px;
+.navLogo{
+  max-block-size: 45px;
+  padding:25px;
+}
+.navLogo:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+.navLogo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px;
+  
 }
 nav ul {
   list-style: none;
