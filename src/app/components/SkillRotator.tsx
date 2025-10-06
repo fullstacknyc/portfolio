@@ -20,7 +20,7 @@ export default function SkillRotator({ skills, interval = 3000 }: SkillRotatorPr
   }, [skills, interval]);
 
   return (
-    <div className="skill-rotator">
+    <div className="m-8 sm:m-16 md:m-32 p-6 bg-gray-50 rounded-2xl text-center font-bold text-2xl hover:bg-gray-200">
       {skills[index]}
     </div>
   );
