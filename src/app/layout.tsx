@@ -42,7 +42,9 @@ export default function RootLayout({
         <div className="logoAndNav">
         <Header />
         </div>
+        <div className="bodyContent">
         {children}
+        </div>
         <Footer />
       </body>
     </html>

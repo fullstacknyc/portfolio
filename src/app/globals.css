@@ -70,3 +70,34 @@ footer {
   border-radius: 45px;
   width: 300px;
 }
+@media (min-width: 640px) {
+  .element {
+    margin: 4rem; /* sm:m-16 */
+  }
+}
+
+@media (min-width: 768px) {
+  .element {
+    margin: 8rem; /* md:m-32 */
+  }
+}
+.skill-rotator {
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.bodyContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: orangered;
+  border-style:ridge;
+}
