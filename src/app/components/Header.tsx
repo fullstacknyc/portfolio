@@ -2,9 +2,10 @@ import React from "react";
 
 function Header() {
   return (<>
+
     <header className="logoAndNav">
   <div className="navLogo">
-    <p>Camilo Gomez</p>
+    <p>Camilo 777</p>
   </div>
   <nav>
     <ul>
