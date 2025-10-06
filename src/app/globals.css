@@ -23,6 +23,7 @@ nav {
 .navLogo{
   max-block-size: 45px;
   padding:25px;
+  border-radius: 45px;
 }
 .navLogo:hover {
   cursor: pointer;
@@ -46,6 +47,7 @@ nav ul li a {
   font-weight: bold;
   transition: color 0.3s;
   padding: 15px;
+  border-radius: 15px;
 }
 nav ul li a:hover {
   color: white;
@@ -61,8 +63,6 @@ main {
   height: auto;
 }
 footer {
-  display: flex;
-  text-align: center;
   padding: 1rem;
   color: black;
   font-weight: bold;
@@ -100,4 +100,9 @@ footer {
   width: 100%;
   background-color: orangered;
   border-style:ridge;
+}
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
