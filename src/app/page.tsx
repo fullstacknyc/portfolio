@@ -22,7 +22,9 @@ const skillset = [
 export default function Home() {
   return (
     <main>
+      <div className="intro">
       <SkillRotator skills={skillset} interval={3000} />
+      </div>
     </main>
   );
 }

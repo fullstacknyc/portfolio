@@ -65,15 +65,16 @@ main {
   height: auto;
 }
 
-main div {
+.skill-rotator {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   background-color: whitesmoke;
   margin: 200px;
   padding: 25px;
+  border-radius: 30px;
 }
-main div:hover {
+.skill-rotator:hover {
   background-color: lightgray;
   cursor: pointer;
 }

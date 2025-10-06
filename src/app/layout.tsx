@@ -1,5 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, AWS, Linux, and Kubernetes.",
   keywords: [
-    "Full-Stack Developer",
-    "Next.js",
+    "React Developer",
+    "Next.js Developer",
     "React",
     "TypeScript",
-    "Tailwind",
+    "Tailwind",     
     "Web Development",
-    "Portfolio",
+    "Front-End Portfolio",
   ],
   authors: [{ name: "Camilo" }],
   creator: "Camilo",
@@ -26,32 +28,6 @@ export const metadata: Metadata = {
   },
 };
 
-function Header() {
-  return (<>
-    <header className="logoAndNav">
-  <div className="navLogo">
-    <p>Camilo Gomez</p>
-  </div>
-  <nav>
-    <ul>
-      <li><a>About</a></li>
-      <li><a>Contact</a></li>
-      <li><a>Projects</a></li>
-    </ul>
-  </nav>
-</header>
-
-    </>
-  )
-}
-function Footer() {
-  return (
-    <footer>
-      <p>&copy; 2025 Camilo Gomez. All rights reserved.</p>
-    </footer>
-  );
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -59,6 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body>
         <div className="logoAndNav">
         <Header />
