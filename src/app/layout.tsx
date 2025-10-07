@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Camilo | Next.js Portfolio",
+  title: "Business To Business Development",
   description:
     "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, AWS, Linux, and Kubernetes.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Camilo" }],
   creator: "Camilo",
   openGraph: {
-    title: "Camilo | Next.js Portfolio",
+    title: "Business To Business Development",
     description:
       "Portfolio of Camilo, a full-stack developer specializing in Next.js, TypeScript, Tailwind, AWS, Linux, and Kubernetes.",
     type: "website",

@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main>
       <div className="intro">
-        <h1>Front-End React Development</h1>
+      <h1>B2B Application Development</h1>
       <SkillRotator skills={skillset} interval={3000} />
       </div>
     </main>
