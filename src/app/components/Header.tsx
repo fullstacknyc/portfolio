@@ -6,12 +6,12 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="#">
+            <a href="https://www.camilo777.com">
               Home
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.camilo777.com/about">
               About
             </a>
           </li>
