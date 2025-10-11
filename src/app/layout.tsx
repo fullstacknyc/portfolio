@@ -39,15 +39,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        <div className="logoAndNav">
         <Header />
-        </div>
-        <div className="bodyContent">
         {children}
-        </div>
-        <div className="footerContent">
         <Footer />
-        </div>
       </body>
     </html>
   );

@@ -2,8 +2,8 @@ import React from "react";
 
 function Header() {
   return (<>
-  <header className="flex flex-row items-center justify-between w-full px-4 sm:px-8">
-  <div className="navLogo">
+  <header>
+  <div>
     <p>Home</p>
   </div>
   <nav>

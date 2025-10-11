@@ -19,9 +19,8 @@ export default function SkillRotator({ skills, interval = 3000 }: SkillRotatorPr
     return () => clearInterval(timer); // cleanup on unmount
   }, [skills, interval]);
 
-  return (
-    <div className="skill-rotator">
+  return (<>
       {skills[index]}
-    </div>
-  );
+      </>
+   );
 }
