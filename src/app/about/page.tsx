@@ -1,12 +1,10 @@
 "use client";
 import "../globals.css";
 
-import { useState, useEffect } from "react";
-
 export default function About() {
     return <>
             <h1>About Me</h1>
-            <p>I'm a front-end developer learning various roadmaps and utilizing those skills to solve real world problems.</p>
+            <p>I`m a front-end developer learning various roadmaps and utilizing those skills to solve real world problems.</p>
             <p>Roadmaps I am studying include:</p>
             <ul>
                 <li>Front-End</li>
