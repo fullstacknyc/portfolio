@@ -6,22 +6,22 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="/">
+            <a href="https://www.camilo777.com">
               Home
             </a>
           </li>
           <li>
-            <a href="./about/page.tsx">
+            <a href="/about">
               About
             </a>
           </li>
           <li>
-            <a href="./contact/page.tsx">
+            <a href="/contact">
               Contact
             </a>
           </li>
           <li>
-            <a href="./projects/page.tsx">
+            <a href="/projects">
               Projects
             </a>
           </li>
