@@ -5,10 +5,6 @@ import { useState, useEffect } from "react";
 
 export default function About() {
     return <>
-    <html lang="en">
-        <head>
-            <title>About</title>
-        </head>
         <body>
             <h1>About Me</h1>
             <p>I'm a front-end developer learning various roadmaps and utilizing those skills to solve real world problems.</p>
@@ -30,6 +26,5 @@ export default function About() {
             </ul>
             <p>Visit my GitHub <a href="https://www.github.com/fullstacknyc/" target="_blank">here</a>.</p>
         </body>
-    </html>
     </>
 }

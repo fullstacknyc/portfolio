@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -6,24 +7,16 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="https://www.camilo777.com">
-              Home
-            </a>
+            <Link href="/">About</Link>
           </li>
           <li>
-            <a href="/about">
-              About
-            </a>
+            <Link href="/about">About</Link>
           </li>
           <li>
-            <a href="/contact">
-              Contact
-            </a>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <a href="/projects">
-              Projects
-            </a>
+            <Link href="projects">Projects</Link>
           </li>
         </ul>
       </nav>
