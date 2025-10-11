@@ -2,6 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    
+nav {
+    display: flex;
+    justify-content: end;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    margin: 1rem;
+}
+nav ul li a:hover{
+    background-color: grey;
+    color: white;
+    transition: 1s;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8fafc;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+h2, h3 {
+  color: #475569;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #334155;
+}
+.skillRotator {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 5rem;
+}
+main div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

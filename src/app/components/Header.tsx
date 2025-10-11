@@ -2,22 +2,26 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="flex items-center justify-between p-4 bg-white shadow-md">
-      <div className="text-xl font-semibold">Home</div>
+    <header>
       <nav>
-        <ul className="flex gap-6 text-gray-700 list-none">
+        <ul>
           <li>
-            <a href="#" className="hover:text-blue-600 transition-colors ">
+            <a href="#">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#">
               About
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a href="#">
               Contact
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a href="#">
               Projects
             </a>
           </li>
