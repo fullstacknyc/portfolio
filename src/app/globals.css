@@ -3,13 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white font-sans w-full;
-}
-
-nav ul {
-  @apply list-none flex gap-6;
-}
-
-nav ul li a {
-  @apply text-black font-bold transition-colors duration-300 px-4 py-2 rounded-lg hover:text-white hover:bg-black;
+    
 }
