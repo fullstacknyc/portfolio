@@ -11,17 +11,17 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="/about">
+            <a href="./about/page.tsx">
               About
             </a>
           </li>
           <li>
-            <a href="/contact">
+            <a href="./contact/page.tsx">
               Contact
             </a>
           </li>
           <li>
-            <a href="/projects">
+            <a href="./projects/page.tsx">
               Projects
             </a>
           </li>
